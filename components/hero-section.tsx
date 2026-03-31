@@ -18,9 +18,7 @@ export function HeroSection() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1]">
-              Courtyard Pickle
-              <br />
-              <span className="text-lime">Is Calling.</span>
+              Courtyard awaits you.
             </h1>
 
             <p className="text-lg sm:text-xl text-slate-400 max-w-lg leading-relaxed">

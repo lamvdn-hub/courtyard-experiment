@@ -36,7 +36,7 @@ export function StickyNav() {
               <Zap className="w-5 h-5 text-forest" />
             </div>
             <span className="text-white font-bold text-lg tracking-tight hidden sm:block">
-              THE KITCHEN CLUB
+              COURTYARD PICKLEBALL
             </span>
           </a>
 

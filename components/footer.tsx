@@ -43,7 +43,7 @@ export function Footer() {
                 <Zap className="w-5 h-5 text-forest" />
               </div>
               <span className="text-white font-bold text-lg tracking-tight">
-                COURTYARD PICKLE
+                COURTYARD PICKLEBALL
               </span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
@@ -137,7 +137,7 @@ export function Footer() {
 
         <div className="mt-16 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-slate-400/60 text-xs">
-            &copy; {new Date().getFullYear()} Courtyard Pickle. All rights reserved.
+            &copy; {new Date().getFullYear()} Courtyard Pickleball. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-slate-400/60 text-xs hover:text-white/60 transition-colors">
