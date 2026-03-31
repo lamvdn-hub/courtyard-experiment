@@ -42,7 +42,7 @@ export function HowItWorks() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-3 gap-4 lg:gap-6 max-w-5xl mx-auto">
           {steps.map((step, index) => (
             <div
               key={step.number}

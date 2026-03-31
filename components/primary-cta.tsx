@@ -4,7 +4,7 @@ import { BOOKING_URL } from '@/lib/constants';
 
 export function PrimaryCTA() {
   return (
-    <section className="py-20 sm:py-28 relative">
+    <section className="py-12 sm:py-16 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-lime/[0.03] to-transparent" />
 
       <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
