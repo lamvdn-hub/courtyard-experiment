@@ -1,1 +1,1 @@
-export const BOOKING_URL = 'https://book.thekitchenclub.com';
+export const BOOKING_URL = 'https://datlich.alobo.vn/san/sport_courtyard_pickle';
