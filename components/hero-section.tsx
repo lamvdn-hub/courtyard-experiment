@@ -35,6 +35,11 @@ export function HeroSection() {
                   <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>
+              <Button asChild variant="ghost" className="text-white border border-white/20 hover:bg-white/10 hover:text-white rounded-xl px-8 h-14 text-base transition-all duration-200">
+                <a href="#how-it-works">
+                  How It Works
+                </a>
+              </Button>
             </div>
 
             <div className="flex items-center gap-6 pt-4">
