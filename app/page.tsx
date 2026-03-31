@@ -1,115 +1,23 @@
-'use client';
-
-import { useState, useRef, useCallback, useMemo } from 'react';
 import { StickyNav } from '@/components/sticky-nav';
 import { HeroSection } from '@/components/hero-section';
-import { StickyBookingBar } from '@/components/sticky-booking-bar';
-import { CourtGrid, CourtGridHandle } from '@/components/court-grid';
 import { HowItWorks } from '@/components/how-it-works';
+import { CourtsShowcase } from '@/components/courts-showcase';
+import { PrimaryCTA } from '@/components/primary-cta';
 import { FAQSection } from '@/components/faq-section';
 import { Footer } from '@/components/footer';
-import { BookingInline } from '@/components/booking-inline';
-import { TimeSlotSheet } from '@/components/time-slot-sheet';
-import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
-import { SlotSelection } from '@/lib/time-slots';
+import { MobileBottomCTA } from '@/components/mobile-bottom-cta';
 
 export default function Home() {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
-  const [confirmedTime, setConfirmedTime] = useState<SlotSelection | null>(null);
-  const [sheetOpen, setSheetOpen] = useState(false);
-  const courtGridRef = useRef<CourtGridHandle>(null);
-  const bookingSectionRef = useRef<HTMLDivElement>(null);
-
-  const observerOptions = useMemo(() => ({ threshold: 0.3 }), []);
-  const isBookingVisible = useIntersectionObserver(bookingSectionRef, observerOptions);
-
-  const showStickyBar = !!selectedDate && !isBookingVisible;
-
-  const scrollToCourts = useCallback(() => {
-    const courtsEl = document.getElementById('courts');
-    if (courtsEl) {
-      courtsEl.scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => {
-        courtGridRef.current?.highlightCourts();
-      }, 600);
-    }
-  }, []);
-
-  const scrollToBooking = useCallback(() => {
-    const bookingEl = document.getElementById('booking-section');
-    if (bookingEl) {
-      const top = bookingEl.getBoundingClientRect().top + window.scrollY - 96;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-  }, []);
-
-  const handleCheckAvailability = useCallback(() => {
-    scrollToCourts();
-  }, [scrollToCourts]);
-
-  const openTimeSheet = useCallback(() => {
-    setSheetOpen(true);
-  }, []);
-
-  const handleTimeConfirm = useCallback((selection: SlotSelection) => {
-    setConfirmedTime(selection);
-    setSheetOpen(false);
-  }, []);
-
-  const handleSheetDateChange = useCallback((date: Date) => {
-    setSelectedDate(date);
-    setConfirmedTime(null);
-  }, []);
-
   return (
     <main className="relative">
-      <StickyNav onCtaClick={scrollToBooking} />
-
-      <StickyBookingBar
-        visible={showStickyBar}
-        selectedDate={selectedDate}
-        confirmedTime={confirmedTime}
-        onDateClick={scrollToBooking}
-        onTimeClick={openTimeSheet}
-      />
-
-      <HeroSection onBookClick={scrollToBooking} />
-
+      <StickyNav />
+      <HeroSection />
       <HowItWorks />
-
-      <div id="booking-section" ref={bookingSectionRef} className="relative z-30 pt-12 pb-0 sm:pt-16 sm:pb-0">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="border-t border-white/20 mb-6 sm:mb-8" />
-          <p className="text-center text-sm font-semibold tracking-widest uppercase text-lime mb-6">
-            Your court is waiting.
-          </p>
-          <BookingInline
-            selectedDate={selectedDate}
-            onDateSelect={setSelectedDate}
-            confirmedTime={confirmedTime}
-            onTimeClick={openTimeSheet}
-            onCheckAvailability={handleCheckAvailability}
-          />
-          <p className="text-center text-xs text-white/40 mt-4">
-            No account required. Instant confirmation.
-          </p>
-        </div>
-      </div>
-
-      <CourtGrid ref={courtGridRef} />
-
+      <CourtsShowcase />
+      <PrimaryCTA />
       <FAQSection />
-
       <Footer />
-
-      <TimeSlotSheet
-        open={sheetOpen}
-        onClose={() => setSheetOpen(false)}
-        onConfirm={handleTimeConfirm}
-        onDateChange={handleSheetDateChange}
-        selectedDate={selectedDate}
-        initialSelection={confirmedTime ?? undefined}
-      />
+      <MobileBottomCTA />
     </main>
   );
 }

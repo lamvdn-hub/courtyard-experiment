@@ -9,6 +9,11 @@ import {
 
 const faqs = [
   {
+    question: 'How do I complete my booking?',
+    answer:
+      'Clicking any "Book" or "Reserve" button on this page takes you to our booking partner\'s secure site where you can select your date, court, and payment details. Confirmation is sent to your email instantly.',
+  },
+  {
     question: 'Do I need my own paddle?',
     answer:
       'Not at all. Every booking includes complimentary access to pro-grade Selkirk paddles and premium pickleballs. Just show up and play.',
@@ -21,7 +26,7 @@ const faqs = [
   {
     question: 'What is your cancellation policy?',
     answer:
-      'Life happens. You can reschedule any booking up to 12 hours in advance with a single tap in our app. No fees, no hassle, no questions.',
+      'Life happens. You can reschedule any booking up to 12 hours in advance through our booking partner. No fees, no hassle, no questions.',
   },
   {
     question: 'What should I wear?',

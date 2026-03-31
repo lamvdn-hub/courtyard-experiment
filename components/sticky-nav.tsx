@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Zap, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { BOOKING_URL } from '@/lib/constants';
 
 const navLinks = [
   { label: 'How it Works', href: '#how-it-works' },
@@ -10,11 +11,7 @@ const navLinks = [
   { label: 'FAQ', href: '#faq' },
 ];
 
-interface StickyNavProps {
-  onCtaClick: () => void;
-}
-
-export function StickyNav({ onCtaClick }: StickyNavProps) {
+export function StickyNav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -56,11 +53,10 @@ export function StickyNav({ onCtaClick }: StickyNavProps) {
           </div>
 
           <div className="flex items-center gap-3">
-            <Button
-              onClick={onCtaClick}
-              className="hidden md:inline-flex bg-lime text-forest font-semibold hover:bg-lime-dim rounded-xl px-6 transition-all duration-200 hover:shadow-lg hover:shadow-lime/20"
-            >
-              Secure Your Court
+            <Button asChild className="hidden md:inline-flex bg-lime text-forest font-semibold hover:bg-lime-dim rounded-xl px-6 transition-all duration-200 hover:shadow-lg hover:shadow-lime/20">
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                Secure Your Court
+              </a>
             </Button>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -86,14 +82,15 @@ export function StickyNav({ onCtaClick }: StickyNavProps) {
                 {link.label}
               </a>
             ))}
-            <Button
-              onClick={() => {
-                setMobileOpen(false);
-                onCtaClick();
-              }}
-              className="w-full bg-lime text-forest font-semibold hover:bg-lime-dim rounded-xl mt-2"
-            >
-              Secure Your Court
+            <Button asChild className="w-full bg-lime text-forest font-semibold hover:bg-lime-dim rounded-xl mt-2">
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+              >
+                Secure Your Court
+              </a>
             </Button>
           </div>
         </div>

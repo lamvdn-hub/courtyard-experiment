@@ -1,19 +1,26 @@
-'use client';
-
-import { CalendarDays, LayoutGrid, ChevronRight } from 'lucide-react';
+import { CalendarDays, ShieldCheck, Trophy, ChevronRight } from 'lucide-react';
 
 const steps = [
   {
     number: '01',
     icon: CalendarDays,
-    title: 'Pick Your Time',
-    description: 'Choose your preferred date and time slot. Morning, afternoon, or evening sessions available daily.',
+    title: 'Pick Your Date & Court',
+    description:
+      'Tap the button below to browse real-time availability. Choose your preferred date and court on our booking page.',
   },
   {
     number: '02',
-    icon: LayoutGrid,
-    title: 'Choose Your Court',
-    description: 'Browse our 12 regulation courts in real-time. Select by location, surface type, or proximity to amenities.',
+    icon: ShieldCheck,
+    title: 'Confirm & Pay',
+    description:
+      'Complete your reservation securely in under a minute. Instant confirmation sent to your email.',
+  },
+  {
+    number: '03',
+    icon: Trophy,
+    title: 'Show Up & Play',
+    description:
+      'Gear included. Courts prepped. Just arrive, check in, and own the kitchen. Post-game lounge awaits.',
   },
 ];
 
@@ -25,7 +32,7 @@ export function HowItWorks() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="inline-block text-lime text-sm font-semibold tracking-widest uppercase mb-4">
-            Simple as 1-2
+            Simple as 1-2-3
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
             How It Works
@@ -35,7 +42,7 @@ export function HowItWorks() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 max-w-3xl mx-auto">
+        <div className="grid sm:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
           {steps.map((step, index) => (
             <div
               key={step.number}

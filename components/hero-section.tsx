@@ -1,13 +1,8 @@
-'use client';
-
 import { ArrowRight, Wifi, Shield, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { BOOKING_URL } from '@/lib/constants';
 
-interface HeroSectionProps {
-  onBookClick: () => void;
-}
-
-export function HeroSection({ onBookClick }: HeroSectionProps) {
+export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-forest via-forest-dark to-forest opacity-80" />
@@ -34,12 +29,11 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                onClick={onBookClick}
-                className="bg-lime text-forest font-semibold hover:bg-lime-dim rounded-xl px-8 h-14 text-base transition-all duration-200 hover:shadow-lg hover:shadow-lime/20 group"
-              >
-                Book a Court
-                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+              <Button asChild className="bg-lime text-forest font-semibold hover:bg-lime-dim rounded-xl px-8 h-14 text-base transition-all duration-200 hover:shadow-lg hover:shadow-lime/20 group">
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                  Book a Court
+                  <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </a>
               </Button>
             </div>
 
