@@ -15,6 +15,8 @@ import { TimeSlotRow } from './time-slot-row';
 import { SheetCalendar } from './sheet-calendar';
 
 const DEMO_OCCUPIED = ['09:00', '09:30', '14:00', '15:30', '19:00', '19:30', '20:00'];
+const DISMISS_THRESHOLD = 0.35;
+const VELOCITY_THRESHOLD = 800;
 
 type SheetView = 'slot-view' | 'calendar-view';
 
@@ -53,6 +55,14 @@ export function TimeSlotSheet({
 }: TimeSlotSheetProps) {
   const [sheetView, setSheetView] = useState<SheetView>('slot-view');
   const [loading, setLoading] = useState(false);
+  const [dragY, setDragY] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+  const [hasEntered, setHasEntered] = useState(false);
+
+  const touchStartY = useRef<number | null>(null);
+  const touchTimestamp = useRef<number>(0);
+  const sheetRef = useRef<HTMLDivElement>(null);
 
   const slots = useMemo(() => generateSlots(DEMO_OCCUPIED), []);
   const grouped = useMemo(() => getSlotsByPeriod(slots), [slots]);
@@ -76,6 +86,15 @@ export function TimeSlotSheet({
     if (open) {
       setSheetView('slot-view');
       setLoading(false);
+      setDragY(0);
+      setIsDragging(false);
+      setIsClosing(false);
+      setHasEntered(false);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setHasEntered(true);
+        });
+      });
     }
   }, [open]);
 
@@ -97,27 +116,50 @@ export function TimeSlotSheet({
     }
   }, [confirmSelection, onConfirm]);
 
-  const handleOverlayClick = useCallback(() => {
-    onClose();
+  const dismissSheet = useCallback(() => {
+    const sheetHeight = sheetRef.current?.offsetHeight ?? window.innerHeight;
+    setIsClosing(true);
+    setIsDragging(false);
+    setDragY(sheetHeight);
+    const timeout = setTimeout(() => {
+      onClose();
+      setIsClosing(false);
+      setDragY(0);
+    }, 300);
+    return () => clearTimeout(timeout);
   }, [onClose]);
 
-  const touchStartY = useRef<number | null>(null);
+  const handleOverlayClick = useCallback(() => {
+    dismissSheet();
+  }, [dismissSheet]);
 
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
     touchStartY.current = e.touches[0].clientY;
+    touchTimestamp.current = Date.now();
+    setIsDragging(true);
   }, []);
 
-  const handleTouchMove = useCallback(
-    (e: React.TouchEvent) => {
-      if (touchStartY.current === null) return;
-      const delta = e.touches[0].clientY - touchStartY.current;
-      if (delta > 70) {
-        touchStartY.current = null;
-        onClose();
-      }
-    },
-    [onClose]
-  );
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    if (touchStartY.current === null) return;
+    const delta = e.touches[0].clientY - touchStartY.current;
+    setDragY(Math.max(0, delta));
+  }, []);
+
+  const handleTouchEnd = useCallback(() => {
+    if (touchStartY.current === null) return;
+    const sheetHeight = sheetRef.current?.offsetHeight ?? 400;
+    const ratio = dragY / sheetHeight;
+    const elapsed = Date.now() - touchTimestamp.current;
+    const velocity = (dragY / elapsed) * 1000;
+
+    if (ratio > DISMISS_THRESHOLD || velocity > VELOCITY_THRESHOLD) {
+      dismissSheet();
+    } else {
+      setIsDragging(false);
+      setDragY(0);
+    }
+    touchStartY.current = null;
+  }, [dragY, dismissSheet]);
 
   const handleDateChipTap = useCallback(() => {
     if (selectedDate) {
@@ -144,18 +186,33 @@ export function TimeSlotSheet({
 
   const hasSelection = !!selection.startSlot;
   const hasRange = !!selection.startSlot && !!selection.endSlot;
+  const sheetHeight = sheetRef.current?.offsetHeight ?? 400;
+  const dragProgress = Math.min(dragY / sheetHeight, 1);
+  const overlayOpacity = 1 - dragProgress * 0.8;
 
   return (
     <div className="fixed inset-0 z-[60]">
       <div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-fade-in"
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        style={{
+          opacity: isClosing ? 0 : hasEntered ? overlayOpacity : 1,
+          transition: isDragging ? 'none' : 'opacity 0.3s ease-out',
+        }}
         onClick={handleOverlayClick}
       />
 
       <div
-        className="absolute bottom-0 left-0 right-0 animate-slide-up"
+        ref={sheetRef}
+        className="absolute bottom-0 left-0 right-0"
+        style={{
+          transform: hasEntered
+            ? `translateY(${dragY}px)`
+            : 'translateY(100%)',
+          transition: isDragging ? 'none' : 'transform 0.3s ease-out',
+        }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         <div className="bg-forest-light rounded-t-2xl border-t border-white/10 shadow-[0_-16px_60px_rgba(0,0,0,0.5)]">
           <div className="flex justify-center pt-3 pb-1">
