@@ -5,9 +5,9 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'The Kitchen Club | Premium Indoor Pickleball',
+  title: 'Courtyard Pickle | Premium Indoor Pickleball',
   description:
-    '12 climate-controlled courts. Pro-grade cushioning. Post-game lounge. Book your court at The Kitchen Club.',
+    '12 climate-controlled courts. Pro-grade cushioning. Post-game lounge. Book your court at Courtyard Pickle.',
 };
 
 export default function RootLayout({
