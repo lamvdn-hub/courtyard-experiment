@@ -57,7 +57,7 @@ export function HeroSection() {
               </a>
             </div>
 
-            <div className="flex items-center gap-6 pt-0 sm:pt-4">
+            <div className="flex items-center gap-6 -mt-5 sm:mt-0 pt-0 sm:pt-4">
               {[
                 { icon: Shield, label: "Free Equipment and Cleaning" },
                 { icon: Umbrella, label: "Covered & Sheltered" },
