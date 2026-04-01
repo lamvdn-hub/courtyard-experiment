@@ -51,7 +51,7 @@ export function HeroSection() {
 
               <a
                 href="#how-it-works"
-                className="sm:hidden text-[14px] text-center text-white/[0.55] transition-colors hover:text-white/70"
+                className="sm:hidden text-[14px] text-center pt-[13px] text-white/[0.55] transition-colors hover:text-white/70"
               >
                 See how it works &rarr;
               </a>
