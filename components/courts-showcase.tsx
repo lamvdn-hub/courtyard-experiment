@@ -12,6 +12,7 @@ export function CourtsShowcase() {
         </div>
 
         <div className="mx-auto max-w-[820px] px-6">
+          <div className="facility-map-desktop">
           <svg viewBox="0 0 780 460" xmlns="http://www.w3.org/2000/svg" fontFamily="system-ui,sans-serif" className="w-full h-auto">
 
             {/* STREET */}
@@ -109,6 +110,110 @@ export function CourtsShowcase() {
             <text x="762" y="452" fontSize="8" fill="rgba(255,255,255,0.14)" textAnchor="end">Not to scale</text>
 
           </svg>
+          </div>
+
+          <div className="facility-map-mobile">
+          <svg viewBox="0 0 260 520" xmlns="http://www.w3.org/2000/svg" fontFamily="system-ui,sans-serif" className="w-full h-auto">
+
+            {/* FACILITY BOUNDARY */}
+            <rect width="260" height="520" rx="8" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
+
+            {/* STREET */}
+            <rect x="0" y="500" width="260" height="20" fill="rgba(204,255,0,0.03)"/>
+            <line x1="0" y1="500" x2="260" y2="500" stroke="rgba(204,255,0,0.2)" strokeWidth="1.2"/>
+            <text x="130" y="513" fontSize="7" fill="rgba(204,255,0,0.4)" textAnchor="middle" fontWeight="500" letterSpacing="2">STREET</text>
+
+            {/* ENTRANCE */}
+            <polygon points="98,492 102,480 106,492" fill="#ccff00" opacity="0.75"/>
+            <text x="102" y="477" fontSize="7" fill="#ccff00" fontWeight="500" textAnchor="middle" letterSpacing="0.3">ENTRANCE</text>
+
+            {/* LOCKER ROOMS */}
+            <rect x="2" y="8" width="86" height="100" rx="5" fill="rgba(120,160,255,0.06)" stroke="rgba(120,160,255,0.35)" strokeWidth="1.2"/>
+            <text x="45" y="22" fontSize="7.5" fill="rgba(120,160,255,0.82)" textAnchor="middle" fontWeight="500">LOCKER ROOMS</text>
+            <line x1="2" y1="58" x2="88" y2="58" stroke="rgba(120,160,255,0.2)" strokeWidth="1" strokeDasharray="3,3"/>
+            <text x="45" y="44" fontSize="8" fill="rgba(120,160,255,0.65)" textAnchor="middle">{"Women's"}</text>
+            <text x="45" y="55" fontSize="7" fill="rgba(255,255,255,0.22)" textAnchor="middle">Showers</text>
+            <text x="45" y="72" fontSize="8" fill="rgba(120,160,255,0.65)" textAnchor="middle">{"Men's"}</text>
+            <text x="45" y="83" fontSize="7" fill="rgba(255,255,255,0.22)" textAnchor="middle">Showers</text>
+
+            {/* OUTDOOR AREA */}
+            <rect x="2" y="116" width="86" height="100" rx="5" fill="rgba(255,160,50,0.04)" stroke="rgba(255,160,50,0.18)" strokeWidth="1" strokeDasharray="4,3"/>
+            <text x="45" y="138" fontSize="8" fill="rgba(255,160,50,0.6)" textAnchor="middle" fontWeight="500">OUTDOOR</text>
+            <text x="45" y="149" fontSize="8" fill="rgba(255,160,50,0.6)" textAnchor="middle" fontWeight="500">AREA</text>
+            <circle cx="30" cy="168" r="7" fill="rgba(255,160,50,0.05)" stroke="rgba(255,160,50,0.16)" strokeWidth="1"/>
+            <circle cx="45" cy="164" r="7" fill="rgba(255,160,50,0.05)" stroke="rgba(255,160,50,0.16)" strokeWidth="1"/>
+            <circle cx="60" cy="168" r="7" fill="rgba(255,160,50,0.05)" stroke="rgba(255,160,50,0.16)" strokeWidth="1"/>
+            <text x="45" y="204" fontSize="7" fill="rgba(255,255,255,0.14)" textAnchor="middle">Open seating</text>
+
+            {/* INDOOR CAFE + FRONT DESK */}
+            <rect x="2" y="224" width="86" height="140" rx="5" fill="rgba(255,160,50,0.1)" stroke="rgba(255,160,50,0.5)" strokeWidth="1.2"/>
+            <text x="45" y="246" fontSize="8" fill="rgba(255,160,50,0.92)" textAnchor="middle" fontWeight="500">{"INDOOR CAF\u00C9"}</text>
+            <text x="45" y="257" fontSize="7" fill="rgba(255,255,255,0.35)" textAnchor="middle">+ Front Desk</text>
+            <rect x="16" y="268" width="18" height="12" rx="2" fill="rgba(255,160,50,0.1)" stroke="rgba(255,160,50,0.22)" strokeWidth="1"/>
+            <rect x="38" y="268" width="18" height="12" rx="2" fill="rgba(255,160,50,0.1)" stroke="rgba(255,160,50,0.22)" strokeWidth="1"/>
+            <rect x="60" y="268" width="18" height="12" rx="2" fill="rgba(255,160,50,0.1)" stroke="rgba(255,160,50,0.22)" strokeWidth="1"/>
+            <text x="45" y="296" fontSize="7" fill="rgba(255,255,255,0.2)" textAnchor="middle">Counter</text>
+            <text x="45" y="307" fontSize="7" fill="rgba(255,255,255,0.2)" textAnchor="middle">Tables</text>
+            <text x="45" y="318" fontSize="7" fill="rgba(255,255,255,0.2)" textAnchor="middle">Reception</text>
+
+            {/* OUTDOOR CAFE */}
+            <rect x="2" y="372" width="86" height="124" rx="5" fill="rgba(255,160,50,0.06)" stroke="rgba(255,160,50,0.3)" strokeWidth="1" strokeDasharray="4,3"/>
+            <text x="45" y="394" fontSize="8" fill="rgba(255,160,50,0.85)" textAnchor="middle" fontWeight="500">OUTDOOR</text>
+            <text x="45" y="405" fontSize="8" fill="rgba(255,160,50,0.85)" textAnchor="middle" fontWeight="500">{"CAF\u00C9"}</text>
+            <circle cx="30" cy="424" r="7" fill="rgba(255,160,50,0.08)" stroke="rgba(255,160,50,0.25)" strokeWidth="1"/>
+            <circle cx="45" cy="420" r="7" fill="rgba(255,160,50,0.08)" stroke="rgba(255,160,50,0.25)" strokeWidth="1"/>
+            <circle cx="60" cy="424" r="7" fill="rgba(255,160,50,0.08)" stroke="rgba(255,160,50,0.25)" strokeWidth="1"/>
+            <text x="45" y="448" fontSize="7" fill="rgba(255,255,255,0.18)" textAnchor="middle">Open seating</text>
+
+            {/* VERTICAL WALKWAY */}
+            <rect x="92" y="8" width="20" height="488" fill="rgba(255,255,255,0.012)"/>
+            <line x1="92" y1="8" x2="92" y2="496" stroke="rgba(255,255,255,0.06)" strokeWidth="1"/>
+            <line x1="112" y1="8" x2="112" y2="496" stroke="rgba(255,255,255,0.06)" strokeWidth="1"/>
+            <text x="102" y="270" fontSize="7" fill="rgba(255,255,255,0.16)" textAnchor="middle" transform="rotate(-90,102,270)" letterSpacing="2">WALKWAY</text>
+
+            {/* N.A. BLOCK 1 */}
+            <rect x="116" y="8" width="140" height="108" rx="5" fill="rgba(255,255,255,0.014)" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="5,4"/>
+            <text x="186" y="60" fontSize="10" fill="rgba(255,255,255,0.18)" textAnchor="middle" fontWeight="500">N.A.</text>
+            <rect x="148" y="72" width="76" height="18" rx="9" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" strokeWidth="1"/>
+            <text x="186" y="85" fontSize="7" fill="rgba(255,255,255,0.16)" textAnchor="middle">Coming soon</text>
+
+            <line x1="116" y1="124" x2="256" y2="124" stroke="rgba(255,255,255,0.07)" strokeWidth="1" strokeDasharray="4,3"/>
+
+            {/* N.A. BLOCK 2 */}
+            <rect x="116" y="130" width="140" height="108" rx="5" fill="rgba(255,255,255,0.014)" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="5,4"/>
+            <text x="186" y="182" fontSize="10" fill="rgba(255,255,255,0.18)" textAnchor="middle" fontWeight="500">N.A.</text>
+            <rect x="148" y="194" width="76" height="18" rx="9" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" strokeWidth="1"/>
+            <text x="186" y="207" fontSize="7" fill="rgba(255,255,255,0.16)" textAnchor="middle">Coming soon</text>
+
+            <line x1="116" y1="246" x2="256" y2="246" stroke="rgba(255,255,255,0.06)" strokeWidth="1" strokeDasharray="4,3"/>
+
+            {/* COURT 1 - INTERIOR */}
+            <rect x="116" y="252" width="140" height="114" rx="6" fill="rgba(204,255,0,0.04)" stroke="rgba(204,255,0,0.6)" strokeWidth="1.4"/>
+            <text x="186" y="270" fontSize="8" fill="rgba(204,255,0,0.45)" textAnchor="middle" fontWeight="500">{"COURT 1 \u00B7 INTERIOR"}</text>
+            <rect x="126" y="277" width="120" height="80" rx="3" fill="none" stroke="rgba(204,255,0,0.18)" strokeWidth="1"/>
+            <line x1="126" y1="317" x2="246" y2="317" stroke="rgba(204,255,0,0.13)" strokeWidth="1" strokeDasharray="5,4"/>
+            <line x1="186" y1="277" x2="186" y2="357" stroke="rgba(204,255,0,0.07)" strokeWidth="1"/>
+            <line x1="172" y1="277" x2="172" y2="357" stroke="rgba(204,255,0,0.27)" strokeWidth="1.2"/>
+            <line x1="200" y1="277" x2="200" y2="357" stroke="rgba(204,255,0,0.27)" strokeWidth="1.2"/>
+            <rect x="172" y="277" width="28" height="80" fill="rgba(204,255,0,0.03)"/>
+            <text x="186" y="353" fontSize="16" fill="rgba(204,255,0,0.06)" textAnchor="middle" fontWeight="700">1</text>
+
+            {/* COURT 2 - STREETSIDE */}
+            <rect x="116" y="374" width="140" height="120" rx="6" fill="rgba(204,255,0,0.04)" stroke="rgba(204,255,0,0.6)" strokeWidth="1.4"/>
+            <text x="186" y="392" fontSize="8" fill="rgba(204,255,0,0.45)" textAnchor="middle" fontWeight="500">{"COURT 2 \u00B7 STREETSIDE"}</text>
+            <rect x="126" y="399" width="120" height="86" rx="3" fill="none" stroke="rgba(204,255,0,0.18)" strokeWidth="1"/>
+            <line x1="126" y1="442" x2="246" y2="442" stroke="rgba(204,255,0,0.13)" strokeWidth="1" strokeDasharray="5,4"/>
+            <line x1="186" y1="399" x2="186" y2="485" stroke="rgba(204,255,0,0.07)" strokeWidth="1"/>
+            <line x1="172" y1="399" x2="172" y2="485" stroke="rgba(204,255,0,0.27)" strokeWidth="1.2"/>
+            <line x1="200" y1="399" x2="200" y2="485" stroke="rgba(204,255,0,0.27)" strokeWidth="1.2"/>
+            <rect x="172" y="399" width="28" height="86" fill="rgba(204,255,0,0.03)"/>
+            <text x="186" y="481" fontSize="16" fill="rgba(204,255,0,0.06)" textAnchor="middle" fontWeight="700">2</text>
+
+            {/* NOT TO SCALE */}
+            <text x="256" y="516" fontSize="6" fill="rgba(255,255,255,0.12)" textAnchor="end">Not to scale</text>
+
+          </svg>
+          </div>
         </div>
       </div>
     </section>

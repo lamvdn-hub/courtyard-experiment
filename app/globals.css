@@ -12,6 +12,23 @@
   }
 }
 
+.facility-map-desktop {
+  display: block;
+}
+
+.facility-map-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .facility-map-desktop {
+    display: none;
+  }
+  .facility-map-mobile {
+    display: block;
+  }
+}
+
 @layer base {
   :root {
     --background: 155 50% 9%;
