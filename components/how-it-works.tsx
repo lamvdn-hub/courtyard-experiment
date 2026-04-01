@@ -139,7 +139,7 @@ function MobileCards() {
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="pt-6 sm:pt-32 pb-12 relative scroll-mt-20 sm:scroll-mt-0">
+    <section id="how-it-works" className="pt-6 sm:pt-32 pb-12 relative scroll-mt-16 sm:scroll-mt-0">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/[0.02] to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
