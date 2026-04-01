@@ -36,9 +36,9 @@ export function StickyNav() {
             <Image
               src="/courtyard_logo.webp"
               alt="Courtyard Pickleball Logo"
-              width={36}
-              height={36}
-              className="h-9 w-auto transition-transform group-hover:scale-105"
+              width={72}
+              height={72}
+              className="h-[72px] w-auto transition-transform group-hover:scale-105"
               priority
             />
             <span className="text-white font-bold text-base tracking-tight hidden sm:block">
