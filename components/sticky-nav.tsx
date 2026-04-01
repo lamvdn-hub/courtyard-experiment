@@ -1,13 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Zap, Menu, X } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { BOOKING_URL } from '@/lib/constants';
 
 const navLinks = [
   { label: 'How it Works', href: '#how-it-works' },
-  { label: 'Courts', href: '#courts' },
+  { label: 'Facility', href: '#courts' },
   { label: 'FAQ', href: '#faq' },
 ];
 
@@ -32,12 +33,14 @@ export function StickyNav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-lime flex items-center justify-center transition-transform group-hover:scale-110">
-              <Zap className="w-5 h-5 text-forest" />
-            </div>
-            <span className="text-white font-bold text-lg tracking-tight hidden sm:block">
-              COURTYARD PICKLEBALL
-            </span>
+            <Image
+              src="/logo.webp"
+              alt="Courtyard Pickleball"
+              width={140}
+              height={40}
+              className="h-8 w-auto transition-transform group-hover:scale-105"
+              priority
+            />
           </a>
 
           <div className="hidden md:flex items-center gap-8">

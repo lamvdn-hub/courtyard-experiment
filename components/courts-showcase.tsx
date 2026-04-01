@@ -7,7 +7,7 @@ export function CourtsShowcase() {
             Our Facility
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            12 regulation courts with pro-grade surfaces, climate control, and real-time availability.
+            Everything you need all under one roof.
           </p>
         </div>
 

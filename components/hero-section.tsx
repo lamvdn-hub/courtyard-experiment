@@ -1,4 +1,4 @@
-import { ArrowRight, Wifi, Shield, Users } from 'lucide-react';
+import { ArrowRight, Umbrella, Shield, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { BOOKING_URL } from '@/lib/constants';
 
@@ -21,8 +21,8 @@ export function HeroSection() {
             </h1>
 
             <p className="text-lg sm:text-xl text-slate-400 max-w-lg leading-relaxed">
-              12 Climate-controlled courts. Pro-grade cushioning. Post-game lounge.
-              Welcome to pickleball, elevated.
+              Covered courts. Free equipment care. A caf&eacute; to unwind after your games.
+              At Courtyard, leave the details to us and just enjoy.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -41,8 +41,8 @@ export function HeroSection() {
 
             <div className="flex items-center gap-6 pt-4">
               {[
-                { icon: Shield, label: 'Pro-Grade Equipment' },
-                { icon: Wifi, label: 'Climate Controlled' },
+                { icon: Shield, label: 'Free Equipment and Cleaning' },
+                { icon: Umbrella, label: 'Covered & Sheltered' },
                 { icon: Users, label: 'All Skill Levels' },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-2">
