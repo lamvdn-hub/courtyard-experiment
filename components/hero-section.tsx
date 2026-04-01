@@ -7,7 +7,7 @@ import { PhotoSlideshow } from "@/components/photo-slideshow";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-14 sm:pt-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-forest via-forest-dark to-forest opacity-80" />
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-lime/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-lime/5 rounded-full blur-3xl" />
@@ -15,13 +15,13 @@ export function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+            <div className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
               <span className="text-sm text-slate-400">
                 Book online, instant confirmation
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1]">
+            <h1 className="text-[3.25rem] sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.08] sm:leading-[1.1]">
               Courtyard <span className="text-lime">Awaits You.</span>
             </h1>
 
@@ -57,7 +57,7 @@ export function HeroSection() {
               </a>
             </div>
 
-            <div className="flex items-center gap-6 pt-4">
+            <div className="flex items-center gap-6 pt-0 sm:pt-4">
               {[
                 { icon: Shield, label: "Free Equipment and Cleaning" },
                 { icon: Umbrella, label: "Covered & Sheltered" },

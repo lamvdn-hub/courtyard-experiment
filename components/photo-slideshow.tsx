@@ -4,10 +4,10 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 
 const SLIDESHOW_IMAGES = [
-  "/slideshow-images/1.jpg",
   "/slideshow-images/2.jpg",
   "/slideshow-images/3.jpg",
   "/slideshow-images/4.jpg",
+  "/slideshow-images/1.jpg",
   "/slideshow-images/5.jpg",
 ];
 

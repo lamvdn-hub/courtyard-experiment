@@ -17,13 +17,14 @@ export function MobileBottomCTA() {
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 z-50 md:hidden transition-all duration-300 ${
+      className={`fixed z-50 md:hidden transition-all duration-300 left-3 right-3 ${
         visible
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-full pointer-events-none'
       }`}
+      style={{ bottom: 'max(8px, env(safe-area-inset-bottom, 20px))' }}
     >
-      <div className="bg-forest/90 backdrop-blur-2xl border-t border-lime/20 px-4 py-3">
+      <div className="bg-forest/90 backdrop-blur-2xl border border-lime/20 rounded-2xl px-4 py-3">
         <a
           href={BOOKING_URL}
           target="_blank"
