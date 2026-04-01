@@ -133,13 +133,13 @@ export function PhotoSlideshow({ mode }: PhotoSlideshowProps) {
   );
 
   return (
-    <div className={mode === "mobile" ? "flex flex-col items-center gap-3" : ""}>
+    <div className={mode === "mobile" ? "flex flex-col items-center gap-3" : "absolute inset-0"}>
       <div
         ref={containerRef}
         className={`relative overflow-hidden ${
           mode === "mobile"
-            ? "mx-4 rounded-[14px] h-[220px]"
-            : "w-full h-full rounded-2xl"
+            ? "mx-4 rounded-[14px] h-[220px] w-[calc(100%-32px)]"
+            : "absolute inset-0 rounded-2xl"
         }`}
         style={{ backgroundColor: "#132015" }}
         onTouchStart={mode === "mobile" ? handleTouchStart : undefined}
