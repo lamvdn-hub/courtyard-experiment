@@ -41,12 +41,15 @@ export function Footer() {
           <div className="space-y-5">
             <div className="flex items-center gap-2">
               <Image
-                src="/logo.webp"
-                alt="Courtyard Pickleball"
-                width={140}
-                height={40}
-                className="h-8 w-auto"
+                src="/courtyard_logo.webp"
+                alt="Courtyard Pickleball Logo"
+                width={36}
+                height={36}
+                className="h-9 w-auto"
               />
+              <span className="text-white font-bold text-base tracking-tight">
+                COURTYARD PICKLEBALL
+              </span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
               Where serious play meets serious style. Premium indoor pickleball for every level, every day.

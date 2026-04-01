@@ -34,13 +34,16 @@ export function StickyNav() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <a href="#" className="flex items-center gap-2 group">
             <Image
-              src="/logo.webp"
-              alt="Courtyard Pickleball"
-              width={140}
-              height={40}
-              className="h-8 w-auto transition-transform group-hover:scale-105"
+              src="/courtyard_logo.webp"
+              alt="Courtyard Pickleball Logo"
+              width={36}
+              height={36}
+              className="h-9 w-auto transition-transform group-hover:scale-105"
               priority
             />
+            <span className="text-white font-bold text-base tracking-tight hidden sm:block">
+              COURTYARD PICKLEBALL
+            </span>
           </a>
 
           <div className="hidden md:flex items-center gap-8">
