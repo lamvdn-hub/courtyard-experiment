@@ -51,13 +51,13 @@ export function HeroSection() {
 
               <a
                 href="#how-it-works"
-                className="sm:hidden text-[14px] text-center pt-[13px] text-white/[0.55] transition-colors hover:text-white/70"
+                className="sm:hidden text-[14px] text-center text-white/[0.55] transition-colors hover:text-white/70"
               >
                 See how it works &rarr;
               </a>
             </div>
 
-            <div className="flex items-center gap-6 -mt-5 sm:mt-0 pt-0 sm:pt-4">
+            <div className="flex items-center gap-6 sm:mt-0 pt-0 sm:pt-4">
               {[
                 { icon: Shield, label: "Free Equipment and Cleaning" },
                 { icon: Umbrella, label: "Covered & Sheltered" },
@@ -80,7 +80,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="lg:hidden mt-10">
+        <div className="lg:hidden mt-8">
           <PhotoSlideshow mode="mobile" />
         </div>
       </div>
