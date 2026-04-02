@@ -15,7 +15,9 @@ export function CourtsShowcase() {
           <div className="facility-map-desktop">
           <svg viewBox="0 0 780 460" xmlns="http://www.w3.org/2000/svg" fontFamily="system-ui,sans-serif" className="w-full h-auto" role="img" aria-labelledby="facility-map-desktop-title facility-map-desktop-desc">
             <title id="facility-map-desktop-title">Courtyard facility floor plan</title>
-            <desc id="facility-map-desktop-desc">Bird's-eye layout showing two padel courts, indoor and outdoor café areas, locker rooms, and the street-side entrance walkway.</desc>
+            <desc id="facility-map-desktop-desc">Floor plan of Courtyard Pickle at 27 Thị Xuân Quý, Ngũ Hành Sơn, Da Nang.
+  The facility features two covered pickleball courts — Court 1 Interior and Court 2 Streetside — an indoor café with front desk and reception, an outdoor café with open seating, an outdoor area, and locker rooms with separate men's and women's showers
+            </desc>
 
             {/* STREET */}
             <rect x="0" y="0" width="30" height="460" fill="rgba(204,255,0,0.03)"/>
