@@ -222,7 +222,7 @@ export function CourtsShowcase() {
           </svg>
           </div>
           <p className="sr-only">
-            The Courtyard facility includes two regulation padel courts (Court 1 Interior and Court 2 Streetside), an indoor café with front desk and reception, an outdoor café with open seating, a separate outdoor seating area, and men's and women's locker rooms with showers. The entrance opens from the street into a central walkway connecting all areas. Additional spaces are coming soon.
+            The Courtyard facility includes two sheltered and covered picklball courts (Court 1 Interior and Court 2 Streetside), an indoor café with front desk and reception, an outdoor café with open seating, a separate outdoor seating area, and men's and women's locker rooms with showers. The entrance opens from the street into a central walkway connecting all areas. Additional spaces are coming soon.
           </p>
         </div>
       </div>
