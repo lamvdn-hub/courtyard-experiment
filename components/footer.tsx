@@ -1,57 +1,47 @@
+'use client';
+
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
 
-const quickLinks = [
-  { label: 'Coaching', href: '#' },
-  { label: 'Contact Us', href: '#' },
-];
-
-function FacebookIcon() {
+function FacebookButtonIcon() {
   return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="rgba(255,255,255,0.45)"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="10" cy="10" r="8.5" stroke="rgba(255,255,255,0.45)" strokeWidth="1.2"/>
+      <path d="M12 6.5H10.5C10.2 6.5 10 6.7 10 7V8.5H12L11.7 10.5H10V16H8V10.5H6.5V8.5H8V7C8 5.9 8.9 5 10 5H12V6.5Z" fill="rgba(255,255,255,0.45)"/>
     </svg>
   );
 }
 
-function ZaloIcon() {
+function ZaloButtonIcon() {
   return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 32 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M16 2C8.268 2 2 8.268 2 16c0 2.786.763 5.394 2.09 7.627L2 30l4.527-1.867C8.612 29.328 11.22 30 14 30h2c7.732 0 14-6.268 14-14S23.732 2 16 2z"
-        fill="rgba(255,255,255,0.45)"
-      />
-      <path
-        d="M10 13h6.5l-6.5 6h7"
-        stroke="rgba(30,30,30,0.8)"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-      />
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 16C3 16 4.8 14.8 5.8 14.2C7.2 13.4 8.2 13.2 10 13.2C14 13.2 17 11 17 8.2C17 5.4 14 3.2 10 3.2C6 3.2 3 5.4 3 8.2C3 9.8 4 11.2 5.5 12.2L5 16H3Z" stroke="rgba(255,255,255,0.45)" strokeWidth="1.2" strokeLinejoin="round" fill="none"/>
+      <text x="10" y="9.5" fontSize="5" fill="rgba(255,255,255,0.45)" textAnchor="middle" fontWeight="700" fontFamily="system-ui">Zalo</text>
     </svg>
   );
 }
+
+const socialButtonStyle: React.CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: '10px',
+  background: 'rgba(255,255,255,0.05)',
+  border: '1px solid rgba(255,255,255,0.1)',
+  borderRadius: '10px',
+  padding: '10px 16px',
+  fontSize: '13px',
+  color: 'rgba(255,255,255,0.6)',
+  cursor: 'pointer',
+  transition: 'background 0.2s, border-color 0.2s',
+};
 
 export function Footer() {
   return (
     <footer className="relative border-t border-white/[0.06]">
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
 
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-[60px] py-16 sm:py-20">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-[2fr_1fr_2fr] sm:gap-12">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-16 sm:py-20">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-[3fr_2fr] sm:gap-16">
           <div className="space-y-5">
             <div className="flex items-center gap-2">
               <Image
@@ -66,58 +56,50 @@ export function Footer() {
               </span>
             </div>
             <p
-              className="text-[13px] leading-[1.6] max-w-[320px]"
-              style={{ color: 'rgba(255,255,255,0.45)' }}
+              className="text-[13px] max-w-[380px]"
+              style={{ color: 'rgba(255,255,255,0.45)', lineHeight: 1.65, marginBottom: '20px' }}
             >
               Courtyard Pickleball is Da Nang&apos;s premier pickleball facility, offering court
               rentals, coaching, and social play at 27 Th&#7883; Xu&acirc;n Qu&yacute;,
               B&#7855;c M&#7929; An, Ng&#361; H&agrave;nh S&#417;n, &#272;&agrave; N&#7861;ng
               550000, Vietnam.
             </p>
-            <div className="flex items-center gap-3">
-              <button
-                aria-label="Facebook"
-                className="w-10 h-10 rounded-xl border flex items-center justify-center transition-all duration-200 hover:bg-white/[0.1] hover:border-white/[0.15]"
-                style={{
-                  background: 'rgba(255,255,255,0.06)',
-                  borderColor: 'rgba(255,255,255,0.1)',
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="https://www.facebook.com/courtyardpickleball"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={socialButtonStyle}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,255,255,0.09)';
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.18)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,255,255,0.05)';
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.1)';
                 }}
               >
-                <FacebookIcon />
-              </button>
-              <button
-                aria-label="Zalo"
-                className="w-10 h-10 rounded-xl border flex items-center justify-center transition-all duration-200 hover:bg-white/[0.1] hover:border-white/[0.15]"
-                style={{
-                  background: 'rgba(255,255,255,0.06)',
-                  borderColor: 'rgba(255,255,255,0.1)',
+                <FacebookButtonIcon />
+                Message us on Facebook
+              </a>
+              <a
+                href="https://zalo.me/[number]"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={socialButtonStyle}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,255,255,0.09)';
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.18)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,255,255,0.05)';
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.1)';
                 }}
               >
-                <ZaloIcon />
-              </button>
+                <ZaloButtonIcon />
+                Chat on Zalo
+              </a>
             </div>
-          </div>
-
-          <div>
-            <h4
-              className="font-semibold text-[11px] uppercase mb-5"
-              style={{ color: 'rgba(255,255,255,0.35)', letterSpacing: '0.08em' }}
-            >
-              Quick Links
-            </h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm hover:text-white transition-colors duration-200"
-                    style={{ color: 'rgba(255,255,255,0.55)' }}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
           </div>
 
           <div>
@@ -155,7 +137,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="mt-16 pt-8 border-t border-white/[0.07] flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>
             &copy; {new Date().getFullYear()} Courtyard Pickleball. All rights reserved.
           </p>
