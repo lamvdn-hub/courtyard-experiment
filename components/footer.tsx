@@ -94,8 +94,8 @@ export function Footer() {
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-lime shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-white text-sm">27 Dương Thị Xuân Quý</p>
-                  <p className="text-slate-400 text-sm">Q. Ngũ Hành Sơn, Đà Nẵng, Việt Nam</p>
+                  <p className="text-white text-sm">27 Thị Xuân Quý</p>
+                  <p className="text-slate-400 text-sm">Bắc Mỹ An, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam</p>
                 </div>
               </div>
               {/*} <div className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-white/[0.05] border border-white/[0.08]">
