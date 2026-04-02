@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
-import { FACEBOOK_URL } from '@/lib/constants';
 
 const quickLinks = [
   { label: 'Coaching', href: '#' },
@@ -10,13 +9,38 @@ const quickLinks = [
 function FacebookIcon() {
   return (
     <svg
-      width="14"
-      height="14"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill="#1877F2"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    </svg>
+  );
+}
+
+function ZaloIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16 2C8.268 2 2 8.268 2 16c0 2.786.763 5.394 2.09 7.627L2 30l4.527-1.867C8.612 29.328 11.22 30 14 30h2c7.732 0 14-6.268 14-14S23.732 2 16 2z"
+        fill="#0068FF"
+      />
+      <path
+        d="M10 13h6.5l-6.5 6h7"
+        stroke="white"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
     </svg>
   );
 }
@@ -50,24 +74,28 @@ export function Footer() {
               B&#7855;c M&#7929; An, Ng&#361; H&agrave;nh S&#417;n, &#272;&agrave; N&#7861;ng
               550000, Vietnam.
             </p>
-            <a
-              href={FACEBOOK_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border transition-all duration-200 hover:bg-white/[0.1] hover:border-white/[0.15]"
-              style={{
-                background: 'rgba(255,255,255,0.06)',
-                borderColor: 'rgba(255,255,255,0.1)',
-              }}
-            >
-              <FacebookIcon />
-              <span
-                className="text-xs"
-                style={{ color: 'rgba(255,255,255,0.6)' }}
+            <div className="flex items-center gap-3">
+              <button
+                aria-label="Facebook"
+                className="w-10 h-10 rounded-xl border flex items-center justify-center transition-all duration-200 hover:bg-white/[0.1] hover:border-white/[0.15]"
+                style={{
+                  background: 'rgba(255,255,255,0.06)',
+                  borderColor: 'rgba(255,255,255,0.1)',
+                }}
               >
-                Facebook
-              </span>
-            </a>
+                <FacebookIcon />
+              </button>
+              <button
+                aria-label="Zalo"
+                className="w-10 h-10 rounded-xl border flex items-center justify-center transition-all duration-200 hover:bg-white/[0.1] hover:border-white/[0.15]"
+                style={{
+                  background: 'rgba(255,255,255,0.06)',
+                  borderColor: 'rgba(255,255,255,0.1)',
+                }}
+              >
+                <ZaloIcon />
+              </button>
+            </div>
           </div>
 
           <div>
