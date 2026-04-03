@@ -7,7 +7,7 @@ export function ScrollReset() {
     if (window.location.hash) {
       history.replaceState(null, '', window.location.pathname);
     }
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scrollTo(0, 0);
   }, []);
 
   return null;
