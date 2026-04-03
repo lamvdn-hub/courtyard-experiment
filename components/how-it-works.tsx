@@ -1,36 +1,9 @@
+'use client';
+
 import { CalendarDays, ShieldCheck, Trophy, ChevronRight } from 'lucide-react';
+import { useLanguage } from '@/lib/language-context';
 
-const steps = [
-  {
-    number: '01',
-    icon: CalendarDays,
-    title: 'Pick Your Date & Court',
-    description:
-      'View real time availability, choose your preferred date and court on our booking page.',
-    mobileTitle: 'Pick your date & court',
-    mobileDescription: 'Browse availability on our booking page',
-  },
-  {
-    number: '02',
-    icon: ShieldCheck,
-    title: 'Confirm & Pay',
-    description:
-      'Complete your payment securely through our trusted partner. Instant confirmation sent to your email.',
-    mobileTitle: 'Confirm & pay',
-    mobileDescription: 'Secure checkout. Instant email confirmation',
-  },
-  {
-    number: '03',
-    icon: Trophy,
-    title: 'Show Up & Play',
-    description:
-      "Court's ready, refreshment prepared, even gears are included. Simply arrive and enjoy your time.",
-    mobileTitle: 'Show up & play',
-    mobileDescription: 'Gear ready. Courts prepped. Just arrive',
-  },
-];
-
-function DesktopCards() {
+function DesktopCards({ steps }: { steps: { number: string; icon: typeof CalendarDays; title: string; description: string }[] }) {
   return (
     <div className="hidden sm:grid sm:grid-cols-3 gap-4 lg:gap-6 max-w-5xl mx-auto">
       {steps.map((step, index) => (
@@ -61,7 +34,7 @@ function DesktopCards() {
   );
 }
 
-function MobileCards() {
+function MobileCards({ steps }: { steps: { number: string; icon: typeof CalendarDays; mobileTitle: string; mobileDescription: string }[] }) {
   return (
     <div className="flex flex-col sm:hidden px-4">
       {steps.map((step, index) => (
@@ -138,6 +111,35 @@ function MobileCards() {
 }
 
 export function HowItWorks() {
+  const { t } = useLanguage();
+
+  const steps = [
+    {
+      number: '01',
+      icon: CalendarDays,
+      title: t.howItWorks.step1Title,
+      description: t.howItWorks.step1Desc,
+      mobileTitle: t.howItWorks.step1MobileTitle,
+      mobileDescription: t.howItWorks.step1MobileDesc,
+    },
+    {
+      number: '02',
+      icon: ShieldCheck,
+      title: t.howItWorks.step2Title,
+      description: t.howItWorks.step2Desc,
+      mobileTitle: t.howItWorks.step2MobileTitle,
+      mobileDescription: t.howItWorks.step2MobileDesc,
+    },
+    {
+      number: '03',
+      icon: Trophy,
+      title: t.howItWorks.step3Title,
+      description: t.howItWorks.step3Desc,
+      mobileTitle: t.howItWorks.step3MobileTitle,
+      mobileDescription: t.howItWorks.step3MobileDesc,
+    },
+  ];
+
   return (
     <section id="how-it-works" className="pt-6 sm:pt-32 pb-12 relative scroll-mt-12 sm:scroll-mt-0">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/[0.02] to-transparent" />
@@ -145,18 +147,18 @@ export function HowItWorks() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-5 sm:mb-16">
           <span className="inline-block text-lime text-sm font-semibold tracking-widest uppercase mb-4">
-            Simple as 1-2-3
+            {t.howItWorks.kicker}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
-            How It Works
+            {t.howItWorks.header}
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto">
-            From booking to playing in under 60 seconds.
+            {t.howItWorks.subheader}
           </p>
         </div>
 
-        <DesktopCards />
-        <MobileCards />
+        <DesktopCards steps={steps} />
+        <MobileCards steps={steps} />
       </div>
     </section>
   );
