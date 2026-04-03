@@ -202,7 +202,7 @@ const vi: Translations = {
     language: 'Ngôn ngữ',
     readyToPlay: 'Sẵn sàng chơi?',
     secureYourCourt: 'Đặt sân ngay',
-    howItWorks: 'Quy Trình Đặt Sân',
+    howItWorks: 'Quy trình đặt sân',
     ourFacility: 'Cơ sở vật chất',
     faq: 'Câu hỏi thường gặp',
     openHours: 'Mở cửa hàng ngày 05:00 – 22:00  ·  2 sân',
