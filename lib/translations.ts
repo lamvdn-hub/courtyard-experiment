@@ -221,7 +221,7 @@ const vi: Translations = {
   cta: {
     readyTitle: 'Sẵn Sàng Nhập Cuộc?',
     reserve: 'Đặt Sân Ngay',
-    disclaimer: 'Bạn sẽ được chuyển đến trang thanh toán bảo mật của đối tác để hoàn tất đặt chỗ.',
+    disclaimer: 'Bạn sẽ được chuyển đến trang đặt sân chính thức của Alobo để hoàn tất quá trình.',
   },
   faq: {
     kicker: 'BẠN CÒN THẮC MẮC?',
