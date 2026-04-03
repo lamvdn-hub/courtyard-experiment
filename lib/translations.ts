@@ -219,9 +219,9 @@ const vi: Translations = {
     step2Desc: 'Thanh toán bảo mật qua đối tác uy tín. Xác nhận sẽ được gửi tức thì đến email của bạn.',
     step2MobileTitle: 'Xác nhận & thanh toán',
     step2MobileDesc: 'Thanh toán bảo mật. Xác nhận qua email',
-    step3Title: 'Đến sân & Trải nghiệm',
+    step3Title: 'Đến sân & trải nghiệm',
     step3Desc: 'Sân đã sẵn sàng, nước uống phục vụ tận nơi, hỗ trợ cả dụng cụ chơi. Bạn chỉ cần đến và tận hưởng.',
-    step3MobileTitle: 'Đến sân & Trải nghiệm',
+    step3MobileTitle: 'Đến sân & trải nghiệm',
     step3MobileDesc: 'Sân sẵn sàng. Chỉ cần đến',
   },
   facility: {
