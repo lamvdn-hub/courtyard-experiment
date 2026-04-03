@@ -74,6 +74,18 @@ export interface Translations {
     header: string;
     subheader: string;
   };
+  footer: {
+    description: string;
+    messageFacebook: string;
+    chatZalo: string;
+    locationTitle: string;
+    addressLine1: string;
+    addressLine2: string;
+    hours: string;
+    copyright: string;
+    privacyPolicy: string;
+    termsOfService: string;
+  };
 }
 
 const en: Translations = {
@@ -151,6 +163,18 @@ const en: Translations = {
     header: 'Everything You Need to Know',
     subheader: 'Straight answers. No runaround.',
   },
+  footer: {
+    description: 'Courtyard Pickleball is Da Nang\'s premier pickleball facility, offering court rentals, coaching, and social play at 27 Thị Xuân Quý, Bắc Mỹ An, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam.',
+    messageFacebook: 'Message us on Facebook',
+    chatZalo: 'Chat on Zalo',
+    locationTitle: 'LOCATION',
+    addressLine1: '27 Thị Xuân Quý',
+    addressLine2: 'Bắc Mỹ An, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam',
+    hours: 'Open Daily: 5 am – 10 pm',
+    copyright: 'Courtyard Pickleball. All rights reserved.',
+    privacyPolicy: 'Privacy Policy',
+    termsOfService: 'Terms of Service',
+  },
 };
 
 const vi: Translations = {
@@ -227,6 +251,18 @@ const vi: Translations = {
     kicker: 'BẠN CÒN THẮC MẮC?',
     header: 'Tất Tần Tật Thông Tin Bạn Cần',
     subheader: 'Trả lời trực diện. Không lòng vòng.',
+  },
+  footer: {
+    description: 'Courtyard Pickleball là tổ hợp sân pickleball hàng đầu tại Đà Nẵng, chuyên cung cấp dịch vụ thuê sân, đào tạo và giao lưu cộng đồng tại số 27 Thị Xuân Quý, Bắc Mỹ An, Ngũ Hành Sơn, Đà Nẵng 550000, Việt Nam.',
+    messageFacebook: 'Nhắn tin qua Facebook',
+    chatZalo: 'Chat ngay qua Zalo',
+    locationTitle: 'ĐỊA ĐIỂM',
+    addressLine1: '27 Thị Xuân Quý',
+    addressLine2: 'Bắc Mỹ An, Ngũ Hành Sơn, Đà Nẵng 550000, Việt Nam',
+    hours: 'Mở cửa hàng ngày: 05:00 – 22:00',
+    copyright: 'Courtyard Pickleball. Bảo lưu mọi quyền.',
+    privacyPolicy: 'Chính sách bảo mật',
+    termsOfService: 'Điều khoản dịch vụ',
   },
 };
 

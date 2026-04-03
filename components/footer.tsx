@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
+import { useLanguage } from '@/lib/language-context';
 
 function FacebookButtonIcon() {
   return (
@@ -36,6 +37,8 @@ const socialButtonStyle: React.CSSProperties = {
 };
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="relative border-t border-white/[0.06]">
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
@@ -59,10 +62,7 @@ export function Footer() {
               className="text-[13px] max-w-[380px]"
               style={{ color: 'rgba(255,255,255,0.45)', lineHeight: 1.65, marginBottom: '20px' }}
             >
-              Courtyard Pickleball is Da Nang&apos;s premier pickleball facility, offering court
-              rentals, coaching, and social play at 27 Th&#7883; Xu&acirc;n Qu&yacute;,
-              B&#7855;c M&#7929; An, Ng&#361; H&agrave;nh S&#417;n, &#272;&agrave; N&#7861;ng
-              550000, Vietnam.
+              {t.footer.description}
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <a
@@ -80,7 +80,7 @@ export function Footer() {
                 }}
               >
                 <FacebookButtonIcon />
-                Message us on Facebook
+                {t.footer.messageFacebook}
               </a>
               <a
                 href="https://zalo.me/[number]"
@@ -97,7 +97,7 @@ export function Footer() {
                 }}
               >
                 <ZaloButtonIcon />
-                Chat on Zalo
+                {t.footer.chatZalo}
               </a>
             </div>
           </div>
@@ -107,7 +107,7 @@ export function Footer() {
               className="font-semibold text-[11px] uppercase mb-5"
               style={{ color: 'rgba(255,255,255,0.35)', letterSpacing: '0.08em' }}
             >
-              Location
+              {t.footer.locationTitle}
             </h4>
             <div className="space-y-4">
               <div className="flex items-start gap-2">
@@ -117,13 +117,13 @@ export function Footer() {
                     className="text-[13px]"
                     style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}
                   >
-                    27 Th&#7883; Xu&acirc;n Qu&yacute;
+                    {t.footer.addressLine1}
                   </p>
                   <p
                     className="text-[13px]"
                     style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}
                   >
-                    B&#7855;c M&#7929; An, Ng&#361; H&agrave;nh S&#417;n, &#272;&agrave; N&#7861;ng 550000, Vietnam
+                    {t.footer.addressLine2}
                   </p>
                 </div>
               </div>
@@ -131,7 +131,7 @@ export function Footer() {
                 className="text-[13px]"
                 style={{ color: 'rgba(255,255,255,0.35)' }}
               >
-                Open Daily: 5 am – 10 pm
+                {t.footer.hours}
               </p>
             </div>
           </div>
@@ -139,7 +139,7 @@ export function Footer() {
 
         <div className="mt-16 pt-8 border-t border-white/[0.07] flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>
-            &copy; {new Date().getFullYear()} Courtyard Pickleball. All rights reserved.
+            &copy; {new Date().getFullYear()} {t.footer.copyright}
           </p>
           <div className="flex items-center gap-6">
             <a
@@ -147,14 +147,14 @@ export function Footer() {
               className="text-xs hover:text-white/60 transition-colors"
               style={{ color: 'rgba(255,255,255,0.25)' }}
             >
-              Privacy Policy
+              {t.footer.privacyPolicy}
             </a>
             <a
               href="#"
               className="text-xs hover:text-white/60 transition-colors"
               style={{ color: 'rgba(255,255,255,0.25)' }}
             >
-              Terms of Service
+              {t.footer.termsOfService}
             </a>
           </div>
         </div>
