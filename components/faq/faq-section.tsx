@@ -6,26 +6,30 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { faqs } from './faq-data';
+import { useLanguage } from '@/lib/language-context';
+import { getFaqs } from './faq-data';
 
 export function FAQSection() {
+  const { lang, t } = useLanguage();
+  const faqItems = getFaqs(lang);
+
   return (
     <section id="faq" className="pt-24 sm:pt-32 pb-12 sm:pb-16 relative">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="inline-block text-lime text-sm font-semibold tracking-widest uppercase mb-4">
-            Got Questions?
+            {t.faq.kicker}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
-            Everything You Need to Know
+            {t.faq.header}
           </h2>
           <p className="text-slate-400 text-lg">
-            Straight answers. No runaround.
+            {t.faq.subheader}
           </p>
         </div>
 
         <Accordion type="single" collapsible className="space-y-3">
-          {faqs.map((faq, index) => (
+          {faqItems.map((faq, index) => (
             <AccordionItem
               key={index}
               value={`faq-${index}`}
