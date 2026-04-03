@@ -102,7 +102,7 @@ export function Footer() {
                 {t.footer.messageFacebook}
               </a>
               <a
-                href="https://zalo.me/[number]"
+                href="https://zalo.me/g/xegehi407"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={socialButtonStyle}
