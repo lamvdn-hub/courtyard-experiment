@@ -184,7 +184,7 @@ const en: Translations = {
 const vi: Translations = {
   nav: {
     howItWorks: 'Cách thức đặt sân',
-    facility: 'Cơ Sở Vật Chất',
+    facility: 'Cơ sở vật chất',
     faq: 'Câu hỏi thường gặp',
     secureYourCourt: 'Đặt sân ngay',
   },
