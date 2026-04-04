@@ -72,7 +72,7 @@ const vi: FAQ[] = [
   {
     question: 'Làm thế nào để đặt sân tại Courtyard Pickle Đà Nẵng?',
     answer:
-      'Chỉ cần nhấp vào bất kỳ nút "Đặt sân" nào trên trang này, bạn sẽ được chuyển đến trang đặt chỗ bảo mật của đối tác. Tại đây, bạn có thể chọn ngày, giờ và sân mong muốn tại Courtyard Pickleball Đà Nẵng. Sau khi hoàn tất thanh toán, bạn sẽ nhận được email xác nhận tức thì.',
+      'Chỉ cần nhấp vào bất kỳ nút "Đặt sân" nào trên trang này, bạn sẽ được chuyển đến trang đặt chỗ chính thức của Alobo. Tại đây, bạn có thể chọn ngày, giờ và sân mong muốn tại Courtyard Pickleball Đà Nẵng. Sau khi hoàn tất thanh toán, bạn sẽ nhận được email xác nhận tức thì.',
   },
   {
     question: 'Chi phí thuê sân pickleball tại Đà Nẵng là bao nhiêu?',
