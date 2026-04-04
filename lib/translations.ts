@@ -230,7 +230,7 @@ const vi: Translations = {
   },
   facility: {
     header: 'Cơ sở vật chất',
-    subheader: 'Tiện ích toàn diện tại một điểm đến.',
+    subheader: 'Tiện ích toàn diện.',
     outdoorCafe: 'CAFÉ NGOÀI TRỜI',
     indoorCafe: 'CAFÉ TRONG NHÀ',
     outdoorArea: 'KHU VỰC NGOÀI TRỜI',
