@@ -62,6 +62,7 @@ export interface Translations {
     court1: string;
     court2: string;
     comingSoon: string;
+    frontDesk: string;
     openSeating: string;
     counterTablesReception: string;
   };
