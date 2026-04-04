@@ -47,10 +47,6 @@ const en: FAQ[] = [
       'You can reschedule any booking up to 12 hours in advance at no charge. Cancellations made more than 12 hours before your session are eligible for a full refund. Cancellations within 12 hours are non-refundable.',
   },
   {
-    question: 'What should I wear to play pickleball?',
-    answer:
-      'Comfortable athletic wear and shoes with good protection is all you need. We have locker rooms and a full changing area available at the facility.',
-  },
   {
     question: 'Is there parking at Courtyard Pickleball in Da Nang?',
     answer:
