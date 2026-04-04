@@ -1,10 +1,9 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { BOOKING_URL } from '@/lib/constants';
 import { MobileMenu } from '@/components/mobile-menu';
 import { LanguageSwitcher } from '@/components/navigation/language-switcher';
 import { useLanguage } from '@/lib/language-context';
@@ -14,6 +13,14 @@ export function StickyNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const { lang, t } = useLanguage();
+
+  const scrollToBooking = useCallback(() => {
+    const el = document.getElementById('booking-section');
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 96;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  }, []);
 
   const navLinks = [
     { label: t.nav.howItWorks, href: '#how-it-works' },
@@ -68,10 +75,11 @@ export function StickyNav() {
               <div className="hidden md:flex">
                 <LanguageSwitcher currentLang={lang} />
               </div>
-              <Button asChild className="hidden md:inline-flex bg-lime text-forest font-semibold hover:bg-lime-dim rounded-xl px-6 transition-all duration-200 hover:shadow-lg hover:shadow-lime/20">
-                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                  {t.nav.secureYourCourt}
-                </a>
+              <Button
+                onClick={scrollToBooking}
+                className="hidden md:inline-flex bg-lime text-forest font-semibold hover:bg-lime-dim rounded-xl px-6 transition-all duration-200 hover:shadow-lg hover:shadow-lime/20 cursor-pointer"
+              >
+                {t.nav.secureYourCourt}
               </Button>
               <button
                 ref={hamburgerRef}

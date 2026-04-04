@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useCallback, useMemo } from 'react';
-import { LanguageProvider } from '@/lib/language-context';
+import { LanguageProvider, useLanguage } from '@/lib/language-context';
 import { StickyNav } from '@/components/sticky-nav';
 import { HeroSection } from '@/components/hero-section';
 import { StickyBookingBar } from '@/components/sticky-booking-bar';
@@ -18,6 +18,26 @@ import { MobileBottomCTA } from '@/components/mobile-bottom-cta';
 import { ScrollReset } from '@/components/scroll-reset';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { SlotSelection } from '@/lib/time-slots';
+
+function BookingKicker() {
+  const { t } = useLanguage();
+  return (
+    <>
+      <p className="text-center text-sm font-semibold tracking-widest uppercase text-lime mb-6">
+        {t.cta.courtWaiting}
+      </p>
+    </>
+  );
+}
+
+function BookingDisclaimer() {
+  const { t } = useLanguage();
+  return (
+    <p className="text-center text-xs text-white/40 mt-4">
+      {t.cta.noAccount}
+    </p>
+  );
+}
 
 export default function Home() {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
@@ -90,16 +110,12 @@ export default function Home() {
 
         <HowItWorks />
 
-        <CourtGrid ref={courtGridRef} />
-
         <CourtsShowcase />
 
         <div id="booking-section" ref={bookingSectionRef} className="relative z-30 pt-12 pb-0 sm:pt-16 sm:pb-0">
           <div className="max-w-4xl mx-auto px-4">
             <div className="border-t border-white/20 mb-6 sm:mb-8" />
-            <p className="text-center text-sm font-semibold tracking-widest uppercase text-lime mb-6">
-              Your court is waiting.
-            </p>
+            <BookingKicker />
             <BookingInline
               selectedDate={selectedDate}
               onDateSelect={setSelectedDate}
@@ -107,11 +123,11 @@ export default function Home() {
               onTimeClick={openTimeSheet}
               onCheckAvailability={handleCheckAvailability}
             />
-            <p className="text-center text-xs text-white/40 mt-4">
-              No account required. Instant confirmation.
-            </p>
+            <BookingDisclaimer />
           </div>
         </div>
+
+        <CourtGrid ref={courtGridRef} />
 
         <FAQSection />
 

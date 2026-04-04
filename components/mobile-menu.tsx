@@ -3,7 +3,6 @@
 import { useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import { X, ArrowRight } from 'lucide-react';
-import { BOOKING_URL } from '@/lib/constants';
 import { LanguageSwitcher } from '@/components/navigation/language-switcher';
 import { useLanguage } from '@/lib/language-context';
 
@@ -54,6 +53,13 @@ export function MobileMenu({ isOpen, onClose, triggerRef }: MobileMenuProps) {
 
   const handleCtaClick = useCallback(() => {
     onClose();
+    setTimeout(() => {
+      const el = document.getElementById('booking-section');
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY - 96;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    }, 220);
   }, [onClose]);
 
   if (!isOpen) return null;
@@ -163,12 +169,9 @@ export function MobileMenu({ isOpen, onClose, triggerRef }: MobileMenuProps) {
           >
             {t.mobile.readyToPlay}
           </p>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
             onClick={handleCtaClick}
-            className="flex items-center justify-center w-full transition-opacity hover:opacity-90"
+            className="flex items-center justify-center w-full transition-opacity hover:opacity-90 cursor-pointer"
             style={{
               backgroundColor: '#ccff00',
               color: '#0a1a0c',
@@ -179,7 +182,7 @@ export function MobileMenu({ isOpen, onClose, triggerRef }: MobileMenuProps) {
             }}
           >
             {t.mobile.secureYourCourt}&nbsp;&rarr;
-          </a>
+          </button>
         </div>
       </div>
 

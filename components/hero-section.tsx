@@ -2,12 +2,19 @@
 
 import { ArrowRight, Umbrella, Shield, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BOOKING_URL } from "@/lib/constants";
 import { PhotoSlideshow } from "@/components/photo-slideshow";
 import { useLanguage } from "@/lib/language-context";
 
 export function HeroSection() {
   const { t } = useLanguage();
+
+  const scrollToBooking = () => {
+    const el = document.getElementById('booking-section');
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 96;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  };
 
   const features = [
     { icon: Shield, label: t.features.equipment },
@@ -43,13 +50,11 @@ export function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                asChild
-                className="bg-lime text-forest font-semibold hover:bg-lime-dim rounded-xl px-8 h-14 text-base transition-all duration-200 hover:shadow-lg hover:shadow-lime/20 group"
+                onClick={scrollToBooking}
+                className="bg-lime text-forest font-semibold hover:bg-lime-dim rounded-xl px-8 h-14 text-base transition-all duration-200 hover:shadow-lg hover:shadow-lime/20 group cursor-pointer"
               >
-                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                  {t.hero.ctaPrimary}
-                  <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                </a>
+                {t.hero.ctaPrimary}
+                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
 
               <Button

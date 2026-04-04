@@ -70,6 +70,8 @@ export interface Translations {
     readyTitle: string;
     reserve: string;
     disclaimer: string;
+    courtWaiting: string;
+    noAccount: string;
   };
   faq: {
     kicker: string;
@@ -161,6 +163,8 @@ const en: Translations = {
     readyTitle: 'Ready to play?',
     reserve: 'Reserve Your Court',
     disclaimer: "You'll be taken to our secure booking partner to complete your reservation.",
+    courtWaiting: 'Your court is waiting.',
+    noAccount: 'No account required. Instant confirmation.',
   },
   faq: {
     kicker: 'Got Questions?',
@@ -253,6 +257,8 @@ const vi: Translations = {
     readyTitle: 'Bạn Đã Sẵn Sàng?',
     reserve: 'Đặt Sân Ngay',
     disclaimer: 'Bạn sẽ được chuyển đến trang đặt sân chính thức của Alobo để hoàn tất quá trình.',
+    courtWaiting: 'Sân của bạn đang chờ.',
+    noAccount: 'Không cần tài khoản. Xác nhận ngay lập tức.',
   },
   faq: {
     kicker: 'BẠN CÒN THẮC MẮC?',
