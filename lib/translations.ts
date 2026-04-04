@@ -218,7 +218,7 @@ const vi: Translations = {
     step1Title: 'Chọn ngày & đặt sân',
     step1Desc: 'Xem lịch trống thời gian thực, chọn ngày và sân bạn muốn ngay trên trang đặt chỗ.',
     step1MobileTitle: 'Chọn ngày & đặt sân',
-    step1MobileDesc: 'Xem lịch trống trên trang đặt chỗ',
+    step1MobileDesc: 'Xem ngày và thời gian trống thực tế trên trang đặt chỗ.',
     step2Title: 'Xác nhận & thanh toán',
     step2Desc: 'Sau khi xác nhận thanh toàn, thông tin đặt sân sẽ được gửi ngay đến email của bạn.',
     step2MobileTitle: 'Xác nhận & thanh toán',
