@@ -5,7 +5,7 @@ import { LanguageProvider, useLanguage } from '@/lib/language-context';
 import { StickyNav } from '@/components/sticky-nav';
 import { HeroSection } from '@/components/hero-section';
 import { StickyBookingBar } from '@/components/sticky-booking-bar';
-import { CourtGrid, CourtGridHandle } from '@/components/court-grid';
+import { CourtSelection, CourtSelectionHandle } from '@/components/court-selection';
 import { CourtsShowcase } from '@/components/courts-showcase';
 import { HowItWorks } from '@/components/how-it-works';
 import { FAQSection } from '@/components/faq/faq-section';
@@ -43,7 +43,7 @@ export default function Home() {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
   const [confirmedTime, setConfirmedTime] = useState<SlotSelection | null>(null);
   const [sheetOpen, setSheetOpen] = useState(false);
-  const courtGridRef = useRef<CourtGridHandle>(null);
+  const courtSelectionRef = useRef<CourtSelectionHandle>(null);
   const bookingSectionRef = useRef<HTMLDivElement>(null);
 
   const observerOptions = useMemo(() => ({ threshold: 0.3 }), []);
@@ -51,12 +51,14 @@ export default function Home() {
 
   const showStickyBar = !!selectedDate && !isBookingVisible;
 
+  const hasDateAndTime = !!selectedDate && !!confirmedTime?.startSlot && !!confirmedTime?.endSlot;
+
   const scrollToCourts = useCallback(() => {
     const courtsEl = document.getElementById('courts');
     if (courtsEl) {
       courtsEl.scrollIntoView({ behavior: 'smooth' });
       setTimeout(() => {
-        courtGridRef.current?.highlightCourts();
+        courtSelectionRef.current?.highlightCourts();
       }, 600);
     }
   }, []);
@@ -127,7 +129,7 @@ export default function Home() {
           </div>
         </div>
 
-        <CourtGrid ref={courtGridRef} />
+        <CourtSelection ref={courtSelectionRef} hasDateAndTime={hasDateAndTime} />
 
         <FAQSection />
 
