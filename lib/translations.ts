@@ -224,7 +224,7 @@ const vi: Translations = {
     step2MobileTitle: 'Xác nhận & thanh toán',
     step2MobileDesc: 'Thanh toán và xác nhận tức thì.',
     step3Title: 'Đến sân & trải nghiệm',
-    step3Desc: 'Sân đã sẵn sàng, nước uống phục vụ tận nơi, hỗ trợ cả dụng cụ chơi. Bạn chỉ cần đến và tận hưởng.',
+    step3Desc: 'Sân đã sẵn sàng, giải khát phục vụ tận nơi, hỗ trợ cả dụng cụ chơi. Bạn chỉ cần đến và tận hưởng.',
     step3MobileTitle: 'Đến sân & trải nghiệm',
     step3MobileDesc: 'Mọi thứ sẵn sàng. Chỉ cần bạn đến trải nghiệm',
   },
