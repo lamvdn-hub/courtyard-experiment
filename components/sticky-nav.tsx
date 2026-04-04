@@ -17,7 +17,7 @@ export function StickyNav() {
 
   const navLinks = [
     { label: t.nav.howItWorks, href: '#how-it-works' },
-    { label: t.nav.facility, href: '#courts' },
+    { label: t.nav.facility, href: '#facility' },
     { label: t.nav.faq, href: '#faq' },
   ];
 

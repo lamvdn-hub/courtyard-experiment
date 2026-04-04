@@ -14,7 +14,6 @@ import { LocalBusinessSchema } from '@/components/faq/local-business-schema';
 import { Footer } from '@/components/footer';
 import { BookingInline } from '@/components/booking-inline';
 import { TimeSlotSheet } from '@/components/time-slot-sheet';
-import { PrimaryCTA } from '@/components/primary-cta';
 import { MobileBottomCTA } from '@/components/mobile-bottom-cta';
 import { ScrollReset } from '@/components/scroll-reset';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
@@ -91,6 +90,10 @@ export default function Home() {
 
         <HowItWorks />
 
+        <CourtGrid ref={courtGridRef} />
+
+        <CourtsShowcase />
+
         <div id="booking-section" ref={bookingSectionRef} className="relative z-30 pt-12 pb-0 sm:pt-16 sm:pb-0">
           <div className="max-w-4xl mx-auto px-4">
             <div className="border-t border-white/20 mb-6 sm:mb-8" />
@@ -109,12 +112,6 @@ export default function Home() {
             </p>
           </div>
         </div>
-
-        <CourtGrid ref={courtGridRef} />
-
-        <CourtsShowcase />
-
-        <PrimaryCTA />
 
         <FAQSection />
 

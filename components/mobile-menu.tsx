@@ -20,7 +20,7 @@ export function MobileMenu({ isOpen, onClose, triggerRef }: MobileMenuProps) {
 
   const navLinks = [
     { label: t.mobile.howItWorks, href: '#how-it-works' },
-    { label: t.mobile.ourFacility, href: '#courts' },
+    { label: t.mobile.ourFacility, href: '#facility' },
     { label: t.mobile.faq, href: '#faq' },
   ];
 
