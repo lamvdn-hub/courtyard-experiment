@@ -192,7 +192,7 @@ const vi: Translations = {
     headlinePart2: 'Pickle.',
     slogan: 'Nơi Cảm Xúc Được Chạm Tới',
     description:
-      'Hệ thống sân có mái che. Dịch vụ vệ sinh dụng cụ miễn phí. Café thư giãn sau trận đấu. Tại Courtyard, hãy để chúng tôi lo mọi thứ để bạn có thể tận hưởng cuộc chơi.',
+      'Hệ thống sân có mái che. Dịch vụ cho thuê và vệ sinh dụng cụ miễn phí. Café thư giãn sau trận đấu. Tại Courtyard, hãy để chúng tôi lo mọi thứ để bạn có thể tận hưởng cuộc chơi.',
     ctaPrimary: 'Đặt sân ngay',
     ctaSecondary: 'Tìm hiểu thêm',
     ctaSecondaryMobile: 'Tìm hiểu thêm',
