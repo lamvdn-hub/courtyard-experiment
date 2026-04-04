@@ -97,7 +97,7 @@ const vi: FAQ[] = [
   {
     question: 'Sân có lớp dạy chơi pickleball không?',
     answer:
-      'Có, chúng tôi cung cấp cả lớp học riêng và lớp học nhóm phù hợp với mọi cấp độ và lứa tuổi tại Courtyard Pickle. Bạn có thể tham khảo và đặt lịch bằng cách liên hệ trực tiếp với chúng tôi.',
+      'Chúng tôi cung cấp cả lớp học riêng và lớp học nhóm phù hợp với mọi cấp độ và lứa tuổi tại Courtyard Pickle. Bạn có thể tham khảo và đặt lịch bằng cách liên hệ trực tiếp với chúng tôi.',
   },
   {
     question: 'Chính sách hủy sân và hoàn tiền như thế nào?',
