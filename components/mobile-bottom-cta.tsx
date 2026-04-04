@@ -1,22 +1,42 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { BOOKING_URL } from '@/lib/constants';
+import { useLanguage } from '@/lib/language-context';
 
-interface MobileBottomCTAProps {
-  onClick: () => void;
-}
+export function MobileBottomCTA() {
+  const { t } = useLanguage();
+  const [visible, setVisible] = useState(false);
 
-export function MobileBottomCTA({ onClick }: MobileBottomCTAProps) {
+  useEffect(() => {
+    const handleScroll = () => {
+      setVisible(window.scrollY > window.innerHeight * 0.8);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden p-3 bg-forest/90 backdrop-blur-2xl border-t border-white/10">
-      <Button
-        onClick={onClick}
-        className="w-full bg-lime text-forest font-bold hover:bg-lime-dim rounded-xl h-14 text-base transition-all duration-200 group"
-      >
-        Book Your Court
-        <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-      </Button>
+    <div
+      className={`fixed z-50 md:hidden transition-all duration-300 left-3 right-3 ${
+        visible
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-full pointer-events-none'
+      }`}
+      style={{ bottom: 'max(8px, env(safe-area-inset-bottom, 20px))' }}
+    >
+      <div className="bg-forest/90 backdrop-blur-2xl border border-lime/20 rounded-2xl px-4 py-3">
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 w-full bg-lime text-forest font-bold hover:bg-lime-dim rounded-xl h-12 text-sm transition-all duration-200 group"
+        >
+          {t.cta.reserve}
+          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+        </a>
+      </div>
     </div>
   );
 }

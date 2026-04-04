@@ -1,22 +1,25 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Zap, Menu, X } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { BOOKING_URL } from '@/lib/constants';
+import { MobileMenu } from '@/components/mobile-menu';
+import { LanguageSwitcher } from '@/components/navigation/language-switcher';
+import { useLanguage } from '@/lib/language-context';
 
-const navLinks = [
-  { label: 'How it Works', href: '#how-it-works' },
-  { label: 'Courts', href: '#courts' },
-  { label: 'FAQ', href: '#faq' },
-];
-
-interface StickyNavProps {
-  onCtaClick: () => void;
-}
-
-export function StickyNav({ onCtaClick }: StickyNavProps) {
+export function StickyNav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const { lang, t } = useLanguage();
+
+  const navLinks = [
+    { label: t.nav.howItWorks, href: '#how-it-works' },
+    { label: t.nav.facility, href: '#courts' },
+    { label: t.nav.faq, href: '#faq' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -25,79 +28,70 @@ export function StickyNav({ onCtaClick }: StickyNavProps) {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-forest/80 backdrop-blur-2xl border-b border-white/10 shadow-lg shadow-black/20'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-lime flex items-center justify-center transition-transform group-hover:scale-110">
-              <Zap className="w-5 h-5 text-forest" />
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? 'bg-forest/80 backdrop-blur-2xl border-b border-white/10 shadow-lg shadow-black/20'
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            <a href="#" className="flex items-center gap-2 group">
+              <Image
+                src="/courtyard_logo.webp"
+                alt="Courtyard Pickleball Logo"
+                width={72}
+                height={72}
+                className="h-[72px] w-auto transition-transform group-hover:scale-105"
+                priority
+              />
+              <span className="text-white font-bold text-base tracking-tight hidden sm:block">
+                COURTYARD PICKLE
+              </span>
+            </a>
+
+            <div className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 tracking-wide uppercase"
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
-            <span className="text-white font-bold text-lg tracking-tight hidden sm:block">
-              THE KITCHEN CLUB
-            </span>
-          </a>
 
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm text-slate-400 hover:text-white transition-colors duration-200 tracking-wide uppercase"
+            <div className="flex items-center gap-3">
+              <div className="hidden md:flex">
+                <LanguageSwitcher currentLang={lang} />
+              </div>
+              <Button asChild className="hidden md:inline-flex bg-lime text-forest font-semibold hover:bg-lime-dim rounded-xl px-6 transition-all duration-200 hover:shadow-lg hover:shadow-lime/20">
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                  {t.nav.secureYourCourt}
+                </a>
+              </Button>
+              <button
+                ref={hamburgerRef}
+                onClick={() => setMobileOpen(true)}
+                className="md:hidden text-white p-2"
+                aria-label="Open menu"
+                aria-expanded={mobileOpen}
               >
-                {link.label}
-              </a>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Button
-              onClick={onCtaClick}
-              className="hidden md:inline-flex bg-lime text-forest font-semibold hover:bg-lime-dim rounded-xl px-6 transition-all duration-200 hover:shadow-lg hover:shadow-lime/20"
-            >
-              Secure Your Court
-            </Button>
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden text-white p-2"
-              aria-label="Toggle menu"
-            >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+                <Menu className="w-6 h-6" />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </nav>
 
-      {mobileOpen && (
-        <div className="md:hidden bg-forest/95 backdrop-blur-2xl border-t border-white/10">
-          <div className="px-4 py-4 space-y-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="block text-sm text-slate-400 hover:text-white transition-colors py-2 uppercase tracking-wide"
-              >
-                {link.label}
-              </a>
-            ))}
-            <Button
-              onClick={() => {
-                setMobileOpen(false);
-                onCtaClick();
-              }}
-              className="w-full bg-lime text-forest font-semibold hover:bg-lime-dim rounded-xl mt-2"
-            >
-              Secure Your Court
-            </Button>
-          </div>
-        </div>
-      )}
-    </nav>
+      <MobileMenu
+        isOpen={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        triggerRef={hamburgerRef}
+      />
+    </>
   );
 }
