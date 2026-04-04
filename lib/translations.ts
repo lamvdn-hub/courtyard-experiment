@@ -183,7 +183,7 @@ const en: Translations = {
 const vi: Translations = {
   nav: {
     howItWorks: 'Quy trình đặt sân',
-    facility: 'Cơ Sở Vật Chất',
+    facility: 'Cơ sở vật chất',
     faq: 'Câu hỏi thường gặp',
     secureYourCourt: 'Đặt sân ngay',
   },
@@ -229,7 +229,7 @@ const vi: Translations = {
     step3MobileDesc: 'Dụng cụ và giải khát đã sẵn sàng. Xin mời bạn đến và trải nghiệm.',
   },
   facility: {
-    header: 'Cơ Sở Vật Chất',
+    header: 'Cơ sở vật chất',
     subheader: 'Tiện ích toàn diện.',
     outdoorCafe: 'CAFÉ NGOÀI TRỜI',
     indoorCafe: 'CAFÉ TRONG NHÀ',
