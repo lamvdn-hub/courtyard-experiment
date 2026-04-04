@@ -149,12 +149,9 @@ export function HowItWorks() {
           <span className="inline-block text-lime text-sm font-semibold tracking-widest uppercase mb-4">
             {t.howItWorks.kicker}
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
             {t.howItWorks.header}
           </h2>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto">
-            {t.howItWorks.subheader}
-          </p>
         </div>
 
         <DesktopCards steps={steps} />
