@@ -190,7 +190,7 @@ const vi: Translations = {
   hero: {
     headlinePart1: 'Courtyard',
     headlinePart2: 'Pickle.',
-    slogan: 'Nơi Cảm Xúc Được "Chạm" Tới',
+    slogan: 'Nơi Cảm Xúc Được Chạm Tới',
     description:
       'Hệ thống sân có mái che. Dịch vụ vệ sinh dụng cụ miễn phí. Café thư giãn sau trận đấu. Tại Courtyard, hãy để chúng tôi lo mọi thứ để bạn có thể tận hưởng cuộc chơi.',
     ctaPrimary: 'Đặt sân ngay',
