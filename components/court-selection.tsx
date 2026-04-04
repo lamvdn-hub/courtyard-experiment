@@ -273,6 +273,7 @@ export const CourtSelection = forwardRef<CourtSelectionHandle, CourtSelectionPro
             >
               <button
                 disabled={selectedCourtId === null}
+                className="transition-all duration-200 hover:shadow-lg hover:shadow-lime/20"
                 style={{
                   width: '100%',
                   background: '#ccff00',
