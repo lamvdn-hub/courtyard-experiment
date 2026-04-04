@@ -66,7 +66,7 @@ export default function Home() {
   const scrollToBooking = useCallback(() => {
     const bookingEl = document.getElementById('booking-section');
     if (bookingEl) {
-      const top = bookingEl.getBoundingClientRect().top + window.scrollY - 96;
+      const top = bookingEl.getBoundingClientRect().top + window.scrollY - 64;
       window.scrollTo({ top, behavior: 'smooth' });
     }
   }, []);

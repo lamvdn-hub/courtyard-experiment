@@ -11,7 +11,7 @@ export function HeroSection() {
   const scrollToBooking = () => {
     const el = document.getElementById('booking-section');
     if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 96;
+      const top = el.getBoundingClientRect().top + window.scrollY - 64;
       window.scrollTo({ top, behavior: 'smooth' });
     }
   };
