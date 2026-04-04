@@ -35,9 +35,9 @@ function CourtDiagramSVG() {
       <rect x="4" y="4" width="112" height="72" rx="3" stroke="#ccff00" strokeWidth="1.2" />
       <line x1="4" y1="40" x2="116" y2="40" stroke="#ccff00" strokeWidth="1" strokeDasharray="5,4" />
       <line x1="60" y1="4" x2="60" y2="76" stroke="#ccff00" strokeWidth="0.7" />
-      <line x1="4" y1="30" x2="116" y2="30" stroke="#ccff00" strokeWidth="1.2" />
-      <line x1="4" y1="50" x2="116" y2="50" stroke="#ccff00" strokeWidth="1.2" />
-      <rect x="4" y="30" width="112" height="20" fill="rgba(204,255,0,0.04)" />
+      <line x1="48" y1="4" x2="48" y2="76" stroke="#ccff00" strokeWidth="1.4" />
+      <line x1="72" y1="4" x2="72" y2="76" stroke="#ccff00" strokeWidth="1.4" />
+      <rect x="48" y="4" width="24" height="72" fill="rgba(204,255,0,0.04)" />
     </svg>
   );
 }
@@ -202,7 +202,7 @@ export const CourtSelection = forwardRef<CourtSelectionHandle, CourtSelectionPro
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5" style={{ marginBottom: '24px' }}>
             {COURTS.map((court) => {
               const status = getStatus(court.id);
               const isOccupied = status === 'occupied';
@@ -259,6 +259,36 @@ export const CourtSelection = forwardRef<CourtSelectionHandle, CourtSelectionPro
                 </div>
               );
             })}
+          </div>
+
+          <div className="flex justify-center">
+            <div
+              style={{
+                width: '100%',
+                maxWidth: '400px',
+                opacity: selectedCourtId !== null ? 1 : 0.4,
+                pointerEvents: selectedCourtId !== null ? 'auto' : 'none',
+                transition: 'opacity 0.2s ease',
+              }}
+            >
+              <button
+                disabled={selectedCourtId === null}
+                style={{
+                  width: '100%',
+                  background: '#ccff00',
+                  color: '#0a1a0c',
+                  fontWeight: 500,
+                  fontSize: '15px',
+                  borderRadius: '12px',
+                  padding: '16px',
+                  border: 'none',
+                  cursor: selectedCourtId !== null ? 'pointer' : 'default',
+                  textAlign: 'center',
+                }}
+              >
+                Proceed to Booking &rarr;
+              </button>
+            </div>
           </div>
         </div>
       </section>
