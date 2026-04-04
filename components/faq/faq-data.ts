@@ -39,7 +39,7 @@ const en: FAQ[] = [
   {
     question: 'Do you offer pickleball lessons in Da Nang?',
     answer:
-      'Yes. We offer both private and group lessons suitable for all levels at Courtyard Pickleball in Da Nang. Lessons can be booked through our booking partner or by contacting us directly.',
+      'Yes, we offer both private and group lessons suitable for all levels and ages at Courtyard Pickle. Lessons can be booked by contacting us directly.',
   },
   {
     question: 'What is your cancellation and refund policy?',
