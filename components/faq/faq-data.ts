@@ -7,7 +7,7 @@ export interface FAQ {
 
 const en: FAQ[] = [
   {
-    question: 'How do I book a pickleball court at Courtyard Pickle?',
+    question: 'How do I book a court at Courtyard Pickle?',
     answer:
       'Clicking any "Book" or "Reserve" button on this page takes you to our booking partner\'s secure site, where you can select your preferred date, time, and court at Courtyard Pickleball in Da Nang. After finalizing the payment you will receive the confirmation instantly in your email.',
   },
