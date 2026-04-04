@@ -136,7 +136,7 @@ export function CourtsShowcase() {
 
             <rect x="2" y="224" width="86" height="140" rx="5" fill="rgba(255,160,50,0.1)" stroke="rgba(255,160,50,0.5)" strokeWidth="1.2"/>
             <text x="45" y="246" fontSize="7" fill="rgba(255,160,50,0.92)" textAnchor="middle" fontWeight="500">{t.facility.indoorCafe}</text>
-            <text x="45" y="257" fontSize="7" fill="rgba(255,255,255,0.35)" textAnchor="middle">+ Front Desk</text>
+            <text x="45" y="257" fontSize="7" fill="rgba(255,255,255,0.35)" textAnchor="middle">{t.facility.frontDesk}</text>
             <rect x="16" y="268" width="18" height="12" rx="2" fill="rgba(255,160,50,0.1)" stroke="rgba(255,160,50,0.22)" strokeWidth="1"/>
             <rect x="38" y="268" width="18" height="12" rx="2" fill="rgba(255,160,50,0.1)" stroke="rgba(255,160,50,0.22)" strokeWidth="1"/>
             <rect x="60" y="268" width="18" height="12" rx="2" fill="rgba(255,160,50,0.1)" stroke="rgba(255,160,50,0.22)" strokeWidth="1"/>
