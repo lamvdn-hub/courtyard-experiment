@@ -14,7 +14,7 @@ export function FAQSection() {
   const faqItems = getFaqs(lang);
 
   return (
-    <section id="faq" className="pt-12 sm:pt-32 pb-12 sm:pb-16 relative">
+    <section id="faq" className="pt-12 sm:pt-12 pb-12 sm:pb-16 relative">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-4">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-4 leading-tight">

@@ -112,7 +112,7 @@ export default function Home() {
 
         <CourtsShowcase />
 
-        <div id="booking-section" ref={bookingSectionRef} className="relative z-30 pt-12 pb-0 sm:pt-16 sm:pb-0">
+        <div id="booking-section" ref={bookingSectionRef} className="relative z-30 pt-12 pb-0 sm:pt-12 sm:pb-0">
           <div className="max-w-4xl mx-auto px-4">
             <div className="border-t border-white/20 mb-6 sm:mb-8" />
             <BookingKicker />
