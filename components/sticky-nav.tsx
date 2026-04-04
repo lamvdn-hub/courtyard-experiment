@@ -48,7 +48,7 @@ export function StickyNav() {
                 priority
               />
               <span className="text-white font-bold text-base tracking-tight hidden sm:block">
-                COURTYARD PICKLEBALL
+                COURTYARD PICKLE
               </span>
             </a>
 
