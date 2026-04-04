@@ -175,7 +175,7 @@ const en: Translations = {
     addressLine1: '27 Thị Xuân Quý',
     addressLine2: 'Bắc Mỹ An, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam',
     hours: 'Open Daily: 5 am – 10 pm',
-    copyright: 'Courtyard Pickleball. All rights reserved.',
+    copyright: 'Courtyard Pickle. All rights reserved.',
     privacyPolicy: 'Privacy Policy',
     termsOfService: 'Terms of Service',
   },
