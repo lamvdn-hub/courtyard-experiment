@@ -1,15 +1,22 @@
 'use client';
 
 import { useState, useRef, useCallback, useMemo } from 'react';
+import { LanguageProvider } from '@/lib/language-context';
 import { StickyNav } from '@/components/sticky-nav';
 import { HeroSection } from '@/components/hero-section';
 import { StickyBookingBar } from '@/components/sticky-booking-bar';
 import { CourtGrid, CourtGridHandle } from '@/components/court-grid';
+import { CourtsShowcase } from '@/components/courts-showcase';
 import { HowItWorks } from '@/components/how-it-works';
-import { FAQSection } from '@/components/faq-section';
+import { FAQSection } from '@/components/faq/faq-section';
+import { FAQSchema } from '@/components/faq/faq-schema';
+import { LocalBusinessSchema } from '@/components/faq/local-business-schema';
 import { Footer } from '@/components/footer';
 import { BookingInline } from '@/components/booking-inline';
 import { TimeSlotSheet } from '@/components/time-slot-sheet';
+import { PrimaryCTA } from '@/components/primary-cta';
+import { MobileBottomCTA } from '@/components/mobile-bottom-cta';
+import { ScrollReset } from '@/components/scroll-reset';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { SlotSelection } from '@/lib/time-slots';
 
@@ -62,54 +69,66 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative">
-      <StickyNav onCtaClick={scrollToBooking} />
+    <LanguageProvider>
+      <main className="relative">
+        <ScrollReset />
+        <FAQSchema />
+        <LocalBusinessSchema />
 
-      <StickyBookingBar
-        visible={showStickyBar}
-        selectedDate={selectedDate}
-        confirmedTime={confirmedTime}
-        onDateClick={scrollToBooking}
-        onTimeClick={openTimeSheet}
-      />
+        <StickyNav />
 
-      <HeroSection onBookClick={scrollToBooking} />
+        <StickyBookingBar
+          visible={showStickyBar}
+          selectedDate={selectedDate}
+          confirmedTime={confirmedTime}
+          onDateClick={scrollToBooking}
+          onTimeClick={openTimeSheet}
+        />
 
-      <HowItWorks />
+        <MobileBottomCTA />
 
-      <div id="booking-section" ref={bookingSectionRef} className="relative z-30 pt-12 pb-0 sm:pt-16 sm:pb-0">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="border-t border-white/20 mb-6 sm:mb-8" />
-          <p className="text-center text-sm font-semibold tracking-widest uppercase text-lime mb-6">
-            Your court is waiting.
-          </p>
-          <BookingInline
-            selectedDate={selectedDate}
-            onDateSelect={setSelectedDate}
-            confirmedTime={confirmedTime}
-            onTimeClick={openTimeSheet}
-            onCheckAvailability={handleCheckAvailability}
-          />
-          <p className="text-center text-xs text-white/40 mt-4">
-            No account required. Instant confirmation.
-          </p>
+        <HeroSection />
+
+        <HowItWorks />
+
+        <div id="booking-section" ref={bookingSectionRef} className="relative z-30 pt-12 pb-0 sm:pt-16 sm:pb-0">
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="border-t border-white/20 mb-6 sm:mb-8" />
+            <p className="text-center text-sm font-semibold tracking-widest uppercase text-lime mb-6">
+              Your court is waiting.
+            </p>
+            <BookingInline
+              selectedDate={selectedDate}
+              onDateSelect={setSelectedDate}
+              confirmedTime={confirmedTime}
+              onTimeClick={openTimeSheet}
+              onCheckAvailability={handleCheckAvailability}
+            />
+            <p className="text-center text-xs text-white/40 mt-4">
+              No account required. Instant confirmation.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <CourtGrid ref={courtGridRef} />
+        <CourtGrid ref={courtGridRef} />
 
-      <FAQSection />
+        <CourtsShowcase />
 
-      <Footer />
+        <PrimaryCTA />
 
-      <TimeSlotSheet
-        open={sheetOpen}
-        onClose={() => setSheetOpen(false)}
-        onConfirm={handleTimeConfirm}
-        onDateChange={handleSheetDateChange}
-        selectedDate={selectedDate}
-        initialSelection={confirmedTime ?? undefined}
-      />
-    </main>
+        <FAQSection />
+
+        <Footer />
+
+        <TimeSlotSheet
+          open={sheetOpen}
+          onClose={() => setSheetOpen(false)}
+          onConfirm={handleTimeConfirm}
+          onDateChange={handleSheetDateChange}
+          selectedDate={selectedDate}
+          initialSelection={confirmedTime ?? undefined}
+        />
+      </main>
+    </LanguageProvider>
   );
 }
