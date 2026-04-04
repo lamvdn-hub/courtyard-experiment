@@ -112,7 +112,7 @@ const vi: FAQ[] = [
   {
     question: 'Tôi có thể đặt sân cho nhóm hoặc sự kiện riêng không?',
     answer:
-      'Có. Chúng tôi nhận tổ chức các buổi giao lưu nhóm, sự kiện công ty và giải đấu nội bộ tại Courtyard Pickle Đà Nẵng. Vui lòng liên hệ qua số điện thoại +84 932150006 hoặc nhắn tin qua Facebook để thảo luận về lịch trống, mức giá và khâu tổ chức.',
+      'Chúng tôi nhận tổ chức các buổi giao lưu nhóm, sự kiện công ty và giải đấu nội bộ tại Courtyard Pickle Đà Nẵng. Vui lòng liên hệ qua số điện thoại +84 932150006 hoặc nhắn tin qua Facebook để thảo luận về lịch trống, mức giá và khâu tổ chức.',
   },
   {
     question: 'Tôi có thể đến chơi mà không cần đặt trước không?',
