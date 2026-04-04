@@ -9,7 +9,7 @@ export function PrimaryCTA() {
   const { t } = useLanguage();
 
   return (
-    <section className="pt-16 pb-12 sm:py-16 relative">
+    <section className="pt-14 pb-12 sm:py-16 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-lime/[0.03] to-transparent" />
 
       <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
