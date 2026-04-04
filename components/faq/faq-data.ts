@@ -34,7 +34,7 @@ const en: FAQ[] = [
   {
     question: 'Can beginners play at Courtyard Pickleball?',
     answer:
-      'We run dedicated beginner-friendly social sessions where experienced players help newcomers learn the basics. Private and group lessons are also available \u2014 book directly through our booking partner or contact us to arrange.',
+      'Absolutely. We welcome all level of players to Courtyard Pickle, and we are especially proud of our amazing community that always extend a helping hand to beginners.',
   },
   {
     question: 'Do you offer pickleball lessons in Da Nang?',
