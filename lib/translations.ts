@@ -220,7 +220,7 @@ const vi: Translations = {
     step1MobileTitle: 'Chọn ngày & đặt sân',
     step1MobileDesc: 'Xem lịch trống trên trang đặt chỗ',
     step2Title: 'Xác nhận & thanh toán',
-    step2Desc: 'Thanh toán bảo mật qua đối tác uy tín. Xác nhận sẽ được gửi tức thì đến email của bạn.',
+    step2Desc: 'Sau khi xác nhận thanh toàn, thông tin đặt sân sẽ được gửi ngay đến email của bạn.',
     step2MobileTitle: 'Xác nhận & thanh toán',
     step2MobileDesc: 'Thanh toán bảo mật. Xác nhận qua email',
     step3Title: 'Đến sân & trải nghiệm',
