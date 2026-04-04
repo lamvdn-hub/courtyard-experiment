@@ -222,7 +222,7 @@ const vi: Translations = {
     step2Title: 'Xác nhận & thanh toán',
     step2Desc: 'Sau khi xác nhận thanh toàn, thông tin đặt sân sẽ được gửi ngay đến email của bạn.',
     step2MobileTitle: 'Xác nhận & thanh toán',
-    step2MobileDesc: 'Thanh toán bảo mật. Xác nhận qua email',
+    step2MobileDesc: 'Thanh toán và xác nhận tức thì.',
     step3Title: 'Đến sân & trải nghiệm',
     step3Desc: 'Sân đã sẵn sàng, nước uống phục vụ tận nơi, hỗ trợ cả dụng cụ chơi. Bạn chỉ cần đến và tận hưởng.',
     step3MobileTitle: 'Đến sân & trải nghiệm',
