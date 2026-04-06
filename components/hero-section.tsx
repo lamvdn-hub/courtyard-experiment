@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Umbrella, Shield, Users } from "lucide-react";
+import { ArrowRight, Umbrella, Shield, Users, ChevronDown, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BOOKING_URL } from "@/lib/constants";
 import { PhotoSlideshow } from "@/components/photo-slideshow";
@@ -17,11 +17,25 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-start pt-24 sm:pt-20 sm:items-center overflow-hidden pb-6 sm:pb-0">
-      <div className="absolute inset-0 bg-gradient-to-br from-forest via-forest-dark to-forest opacity-80" />
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-lime/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-lime/5 rounded-full blur-3xl" />
+      {/* Dynamic Video Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          {/* using a placeholder video for now */}
+          <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-forest/85 backdrop-blur-[2px]" />
+      </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-lime/10 rounded-full blur-3xl z-0" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-lime/10 rounded-full blur-3xl z-0" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="space-y-8">
             <div>
@@ -37,11 +51,11 @@ export function HeroSection() {
               )}
             </div>
 
-            <p className="text-[15px] text-white/[0.65] max-w-lg leading-relaxed sm:text-xl sm:text-slate-400">
+            <p className="text-[15px] text-white/[0.65] max-w-lg leading-relaxed sm:text-xl sm:text-slate-300">
               {t.hero.description}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
               <Button
                 asChild
                 className="bg-lime text-forest font-semibold hover:bg-lime-dim rounded-xl px-8 h-14 text-base transition-all duration-200 hover:shadow-lg hover:shadow-lime/20 group"
@@ -68,11 +82,29 @@ export function HeroSection() {
               </a>
             </div>
 
-            <div className="flex items-center gap-6 sm:mt-0 pt-0 sm:pt-4">
+            {/* Social Proof Inline */}
+            <div className="flex items-center gap-4 pt-2">
+              <div className="flex -space-x-3">
+                <img src="https://i.pravatar.cc/100?img=11" className="w-8 h-8 rounded-full border-2 border-forest" alt="Player 1" />
+                <img src="https://i.pravatar.cc/100?img=12" className="w-8 h-8 rounded-full border-2 border-forest" alt="Player 2" />
+                <img src="https://i.pravatar.cc/100?img=13" className="w-8 h-8 rounded-full border-2 border-forest" alt="Player 3" />
+                <div className="w-8 h-8 rounded-full border-2 border-forest bg-forest flex items-center justify-center text-[10px] text-white font-medium z-10">+</div>
+              </div>
+              <div className="flex flex-col">
+                <div className="flex gap-1 mb-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 fill-lime text-lime" />
+                  ))}
+                </div>
+                <span className="text-xs text-white/80 font-medium">Join 500+ local players</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-6 sm:mt-0 pt-4 sm:pt-6">
               {features.map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-2">
                   <Icon className="w-4 h-4 text-lime" />
-                  <span className="text-xs sm:text-sm text-slate-400">
+                  <span className="text-xs sm:text-sm text-slate-300">
                     {label}
                   </span>
                 </div>
@@ -80,17 +112,23 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="hidden lg:block">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10">
+          <div className="hidden lg:block relative z-10 hover:scale-[1.02] transition-transform duration-500">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
               <PhotoSlideshow mode="desktop" />
             </div>
           </div>
         </div>
 
-        <div className="lg:hidden mt-8 mb-0">
+        <div className="lg:hidden mt-8 mb-0 relative z-10">
           <PhotoSlideshow mode="mobile" />
         </div>
       </div>
+      
+      {/* Scroll Indicator */}
+      <a href="#how-it-works" className="absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition-opacity hidden lg:flex z-10">
+        <span className="text-[10px] text-white/70 font-semibold uppercase tracking-widest">Scroll to Explore</span>
+        <ChevronDown className="w-5 h-5 text-lime" />
+      </a>
     </section>
   );
 }

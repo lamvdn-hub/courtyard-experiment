@@ -4,7 +4,7 @@ This document outlines the next phase of enhancements for The Kitchen Club, focu
 
 ## Master Checklist
 
-- [ ] Phase 1: Above-the-Fold Enhancements
+- [x] Phase 1: Above-the-Fold Enhancements
 - [ ] Phase 2: Trust and Social Proof Integration
 - [ ] Phase 3: Interactive Booking Experience
 - [ ] Phase 4: Visual Content Upgrades
@@ -21,10 +21,10 @@ This document outlines the next phase of enhancements for The Kitchen Club, focu
 
 ### 1. Above-the-Fold Enhancements
 *Focus: Capturing attention immediately and providing immediate value.*
-- [ ] **Dynamic Hero Background**: Replace static gradient with a looping high-quality video of people playing pickleball.
-- [ ] **Scroll Indicator**: Add an animated arrow or "Scroll to Explore" indicator below the primary CTA.
-- [ ] **Live Court Status**: Implement a real-time availability widget (e.g., "Ready to Play? 2 Courts Available Now").
-- [ ] **Social Proof Inline**: Add a "Join 500+ local players" tag near the primary booking button.
+- [x] **Dynamic Hero Background**: Replace static gradient with a looping high-quality video of people playing pickleball.
+- [x] **Scroll Indicator**: Add an animated arrow or "Scroll to Explore" indicator below the primary CTA.
+- [x] **Remove Live Court Status Widget**
+- [x] **Social Proof Inline**: Add a "Join 500+ local players" tag near the primary booking button.
 
 ### 2. Trust and Social Proof Integration
 *Focus: Building credibility with prospective players.*
