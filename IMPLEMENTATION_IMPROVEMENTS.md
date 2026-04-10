@@ -5,15 +5,13 @@ This document outlines the phased implementation strategy for enhancing the Cour
 ## Phase 1: Foundation & Immediate Visual Impact
 *Focus: Enhancing the initial user impression and perceived performance.*
 
-- [ ] **Above-the-Fold Dynamics**
-    - [ ] Implement dynamic video background in hero section (looping pickleball footage).
-    - [ ] Add animated scroll indicator below hero CTA buttons.
-    - [ ] Build a "Real-time Availability" widget (e.g., "2 Courts Available Today").
-    - [ ] Add "Join 500+ players" social proof badge near primary CTA.
-- [ ] **Performance & Technical Basics**
-    - [ ] Implement Skeleton Screen loaders for heavy sections.
-    - [ ] Enable Lazy Loading for all below-the-fold images.
-    - [ ] Add smooth scroll animations for section entries.
+- [x] **Above-the-Fold Dynamics**
+    - [x] Add animated scroll indicator below hero CTA buttons.
+    - [x] Add "Join 500+ players" social proof badge near primary CTA.
+- [x] **Performance & Technical Basics**
+    - [x] Implement Skeleton Screen loaders for heavy sections.
+    - [x] Enable Lazy Loading for all below-the-fold images.
+    - [x] Add smooth scroll animations for section entries.
 
 ## Phase 2: Building Trust & Information Architecture
 *Focus: Establishing credibility and providing all necessary information for a booking decision.*

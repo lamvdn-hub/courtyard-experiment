@@ -18,6 +18,7 @@ import { MobileBottomCTA } from '@/components/mobile-bottom-cta';
 import { ScrollReset } from '@/components/scroll-reset';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { SlotSelection } from '@/lib/time-slots';
+import { AnimatedSection } from '@/components/animated-section';
 
 function BookingKicker() {
   const { t } = useLanguage();
@@ -110,10 +111,15 @@ export default function Home() {
 
         <HeroSection />
 
-        <HowItWorks />
+        <AnimatedSection>
+          <HowItWorks />
+        </AnimatedSection>
 
-        <CourtsShowcase />
+        <AnimatedSection>
+          <CourtsShowcase />
+        </AnimatedSection>
 
+        <AnimatedSection id="booking-section-anim">
         <div id="booking-section" ref={bookingSectionRef} className="relative z-30 pt-12 pb-0 sm:pt-12 sm:pb-0">
           <div className="max-w-4xl mx-auto px-4">
             <div className="border-t border-white/20 mb-6 sm:mb-8" />
@@ -129,9 +135,15 @@ export default function Home() {
           </div>
         </div>
 
-        <CourtSelection ref={courtSelectionRef} hasDateAndTime={hasDateAndTime} />
+        </AnimatedSection>
 
-        <FAQSection />
+        <AnimatedSection>
+          <CourtSelection ref={courtSelectionRef} hasDateAndTime={hasDateAndTime} />
+        </AnimatedSection>
+
+        <AnimatedSection>
+          <FAQSection />
+        </AnimatedSection>
 
         <Footer />
 
